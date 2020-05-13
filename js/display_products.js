@@ -23,7 +23,6 @@ function displayProducts(products) {
           <td><p>${products[Object.keys(products)[i]].area} m²</p></td>
           <td><p>${products[Object.keys(products)[i]].rooms} rum</p></td>
         </table>
-        <button id="${Object.keys(products)[i]}" class="save-btn">Spara</button>
       </div>
     </div>`
   }

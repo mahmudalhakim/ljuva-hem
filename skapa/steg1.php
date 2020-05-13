@@ -34,13 +34,13 @@
       <input type="number" class="form__input--create" name="price" id="price" placeholder="Pris...">
       <br><br>
       <label for="address">Gatuadress</label><br>
-      <input type="text" class="form__input--create" name="address" placeholder="Gatuadress...">
+      <input type="text" class="form__input--create" name="address" placeholder="Gatuadress..." required>
       <br><br>
       <label for="city">Stad</label><br>
-      <input type="text" class="form__input--create" name="city" placeholder="Stad...">
+      <input type="text" class="form__input--create" name="city" placeholder="Stad..." required>
       <br><br>
       <label for="municipality">Kommun</label><br>
-      <select class="form__input--create" name="municipality" id="municipality">
+      <select class="form__input--create" name="municipality" id="municipality" required>
         <option value="unknown">Kommun</option>
       </select>
       <br><br><br>

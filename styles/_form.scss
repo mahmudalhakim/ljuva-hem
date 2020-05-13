@@ -36,6 +36,7 @@ form {
   background: $main--sell;
   border: 1px solid $main--sell;
   width: 100%;
+  max-width: 500px;
   font-weight: 600;
 }
 
@@ -55,6 +56,7 @@ button:hover {
   font-size: 0.9rem;
   padding: 0.5rem;
   width: 100%;
+  max-width: 500px;
 }
 
 .form__input--create {

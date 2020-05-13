@@ -4,7 +4,7 @@
 **************************************** */
 
 $db_server   = "localhost";
-$db_database = "hemma";
+$db_database = "ljuvahem";
 $db_username = "root";
 $db_password = "root"; 
 
