@@ -3,7 +3,7 @@
 ?>
 
 <section class="hero">
-  <form action="">
+  <form action="" name="search">
     <input type="text" class="form__input" placeholder="Skriv område eller adress"><br><br>
       <button class="form__button form__button--active" id="all-btn">Alla typer</button>
       <button class="form__button" id="flat-btn">Lägenheter</button>
