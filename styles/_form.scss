@@ -1,0 +1,62 @@
+form {
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.form__sell {
+  border: 1px solid $main--sell;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.form__button {
+  font-size: 0.9rem;
+  color: $darkGrey;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-image: linear-gradient(#fff, #eee);
+  border: 1px solid $lightGrey;
+  &.form__button--active {
+    background: $mainColor;
+    color: white;
+    border: 1px solid $mainColor;
+  }
+}
+
+.form__submit_btn, .form__reset_btn, .form__submit_btn--create {
+  background: $mainColor;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid $mainColor;
+}
+
+.form__submit_btn--create {
+  background: $main--sell;
+  border: 1px solid $main--sell;
+  width: 100%;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.form__reset_btn {
+  background: white;
+  color: $mainColor;
+}
+
+.form__input, .form__input--create {
+  box-sizing: border-box;
+  border: 2px solid $mainColor;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.form__input--create {
+  border: 1px solid $main--sell;
+}

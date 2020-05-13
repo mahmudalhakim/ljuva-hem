@@ -1,0 +1,48 @@
+@import "colors";
+
+header {
+  background: $lightShade;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  padding: 1rem;
+  nav {
+    display: flex;
+    align-items: center;
+    &.nav__login ul li a {
+      color: $mainColor;
+      
+      &:hover {
+        border-bottom: 2px solid $mainColor;
+      }
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline;
+        a {
+          text-decoration: none;
+          color: $mainColor;
+          padding: 0.1rem;
+          img {
+            width: 1rem;
+          }
+          &:hover {
+            border-bottom: 1px solid $mainColor;
+          }
+        }
+        a.link__active {
+          border-bottom: 1px solid $main--sell;
+        }
+        a.nav__link--sell {
+          color: $main--sell;
+          &:hover {
+            border-bottom: 1px solid $main--sell;
+          }
+        }
+      }
+    }
+  }
+}

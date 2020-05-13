@@ -1,0 +1,13 @@
+.footer__buy, .footer {
+  width: 100%;
+  min-height: 20vh;
+  background: $lightShade;
+}
+
+.footer__buy {
+  color: $mainColor;
+}
+
+.footer__sell {
+  color: $main--sell;
+}

@@ -1,0 +1,31 @@
+.create__nav {
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      align-self: stretch;
+      border-top: 1px solid $main--sell;
+      padding: 0.5rem 1rem;
+      & + li {
+        border-right: 1px solid $main--sell;
+      }
+      h3 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+.create__nav--step, .create__nav--done {
+  color:$main--sell;
+}
+
+.create__nav--done {
+  background: $main--sell;
+  color: white;
+}
