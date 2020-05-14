@@ -14,7 +14,7 @@
 <header>
   <nav>
     <ul>
-      <li><a href="#">Köpa</a></li>
+      <li><a href="index.php">Köpa</a></li>
       <li><a href="skapa/index.php">Sälja</a></li>
     </ul>
   </nav>

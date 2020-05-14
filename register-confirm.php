@@ -7,7 +7,9 @@
     $firstname = htmlspecialchars($_POST['firstname']);
     $surname = htmlspecialchars($_POST['surname']);
     $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
+    $passwordEntered = htmlspecialchars($_POST['password']);
+    $password = password_hash($passwordEntered, PASSWORD_DEFAULT);
+
 
     // check if member is allready registered
     $sqlCheckForMember  = "SELECT `email` FROM `member` WHERE `email` LIKE '$email'";

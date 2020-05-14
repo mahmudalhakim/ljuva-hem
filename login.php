@@ -6,7 +6,7 @@
 
   <section class="hero">
   <h1>Logga in</h1>
-  <form action="" name="search">
+  <form action="login-logic.php" name="login" method="post">
     <label for="email">E-mail</label><br>
     <input type="text" name="email" class="form__input" placeholder="E-mail..." required>
     <br><br>
