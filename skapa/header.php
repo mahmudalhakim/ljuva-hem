@@ -21,7 +21,7 @@
   </nav>
   <nav class="nav__login">
     <ul>
-      <li><a href="../login.php">Logga in</a></li>
+      <li><a href="../login.php" id="loginStatus">Logga in</a></li>
     </ul>
   </nav>
 </header>

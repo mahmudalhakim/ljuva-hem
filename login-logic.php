@@ -17,6 +17,11 @@ if( isset($_POST['email']) && isset($_POST['password'])){
   if($doesMemberExist){
     $passwordEntered = htmlspecialchars($_POST['password']);
     if (password_verify($passwordEntered, $savedPass)) {
+      // start session with 
+      session_start();
+      $_SESSION['loggedintoljuvahem'] = true;
+      $_SESSION['email'] = $email;
+      // send user to create page with all their ads
       header('Location: skapa/index.php');
     } else {
       header('Location: login-fail.php');
