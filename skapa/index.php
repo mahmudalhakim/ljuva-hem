@@ -10,7 +10,7 @@
 
     <nav class="nav__login">
       <ul>
-        <li><a href="../logout-logic.php" id="login">Logga ut</a></li>
+        <li><a href="../logout-logic.php" id="login" class="nav__link--sell">Logga ut</a></li>
       </ul>
     </nav>
     </header>
@@ -19,11 +19,10 @@
 
       <section class="section__create">
         <h1>Hantera annonser</h1>
-        <h3>Skapa annons</h3>
-        <a href="steg1.php"><button class="btn__small">Skapa annons</button></a>
-        <h3>Annonser</h3>';
+        <a href="steg1.php"><button class="ad__button ad__button--active">Skapa ny annons</button></a>
+        <h2>Mina annonser</h2>';
     
-    $sql  = "SELECT * FROM `ad` WHERE `member_id` = $member_id";
+    $sql  = "SELECT * FROM `ad` WHERE `member_id` = $member_id ORDER BY `ad`.`ad_id` DESC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
@@ -36,19 +35,47 @@
       $address = htmlspecialchars($row['address']);
       $city = htmlspecialchars($row['city']);
       $municipality = htmlspecialchars($row['municipality']);
+      $image = htmlspecialchars($row['images']);
+      $type = htmlspecialchars($row['type']);
+      switch ($type) {
+        case 'flat':
+          $typeText = 'Lägenhet';
+          break;
+        case 'house':
+          $typeText = 'Villa';
+          break;
+        case 'townhouse':
+          $typeText = 'Radhus';
+          break;
+        case 'countryhouse':
+          $typeText = 'Fritidshus';
+          break;
+        case 'other':
+          $typeText = 'Övrigt';
+          break;
+      }
+      $publicated = htmlspecialchars($row['publicated']);
+      if($publicated ==  'no'){
+        $publicatedText = 'Väntar på godkännande';
+      } else {
+        $publicatedText = 'Publicerad';
+      }
 
-      echo "<div id='$ad_id' class='product'>";
+      echo "<div id='$ad_id' class='ad'>
 
-      // <div>
-      //   <img src='images/' alt='image'>
-      // </div>
+      <div>
+        <img src='../images/$image' alt='image'>
+      </div>";
       echo "<div class='product-info'>
+          <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Ta bort</button></a>
+          <p>$publicatedText</p>
           <h3>$address, $city</h3>
           <p class=''>$municipality kommun</p>
           <table>
             <td><p>$price kr</p></td>
             <td><p>$area m²</p></td>
             <td><p>$rooms rum</p></td>
+            <td><p>$typeText</p></td>
           </table>
         </div>
       </div>";
@@ -79,13 +106,9 @@
   <main>
     <section class="section__create">
       <h3>Logga in för att se dina annonser</h3>
-      <a href="login.php"><button class="btn__small">Logga in</button></a>
+      <a href="../login.php"><button class="btn__small">Logga in</button></a>
     </section>';
   }
-
-  echo "<pre>";
-  print_r($_SESSION);
-  echo "</pre>";
 ?>
 
 <?php

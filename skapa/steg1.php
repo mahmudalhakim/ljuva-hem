@@ -7,7 +7,7 @@
   echo '<input type="hidden" id="loginStatus" name="loginStatus" value="true">
   <nav class="nav__login">
     <ul>
-      <li><a href="../logout-logic.php" id="login">Logga ut</a></li>
+      <li><a href="../logout-logic.php" id="login" class="nav__link--sell">Logga ut</a></li>
     </ul>
   </nav>
   </header>
@@ -62,7 +62,7 @@
   echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
   <nav class="nav__login">
     <ul>
-      <li><a href="../login.php" id="login">Logga in</a></li>
+      <li><a href="../login.php" id="login" class="nav__link--sell">Logga in</a></li>
     </ul>
   </nav>
 </header>

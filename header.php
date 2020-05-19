@@ -19,6 +19,8 @@
     </ul>
   </nav>
 <?php
+require_once 'db.php';
+session_start();
   if (isset($_SESSION['loggedintoljuvahem']) && $_SESSION['loggedintoljuvahem'] == true) {
     echo '<input type="hidden" id="loginStatus" name="loginStatus" value="true">
     <nav class="nav__login">

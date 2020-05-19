@@ -7,7 +7,7 @@
   echo '<input type="hidden" id="loginStatus" name="loginStatus" value="true">
   <nav class="nav__login">
     <ul>
-      <li><a href="../logout-logic.php" id="login">Logga ut</a></li>
+      <li><a href="../logout-logic.php" id="login" class="nav__link--sell">Logga ut</a></li>
     </ul>
   </nav>
   </header>
@@ -30,9 +30,18 @@
     </div>';
   } else {
     echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
+    <nav class="nav__login">
+      <ul>
+        <li><a href="../login.php" id="login" class="nav__link--sell">Logga in</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
     <section class="section__create">
       <h3>Logga in för att se dina annonser</h3>
-      <a href="../login.php"><button class="btn__small">Logga in</button></a>';
+      <a href="../login.php"><button class="btn__small">Logga in</button></a>
+    </section>';
   }
 ?>
     

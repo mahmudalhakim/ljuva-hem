@@ -12,14 +12,10 @@ require_once '../db.php';
     session_start();
     $member_id = htmlspecialchars($_SESSION['member_id']);
             
-    $sql  = " INSERT INTO `ad` (`ad_id`, `member_id`, `type`, `rooms`, `area`, `price`, `address`, `city`, `municipality`) 
-              VALUES (NULL, '$member_id', '$type', '$rooms', '$area', '$price', '$address', '$city', '$municipality')";
+    $sql  = " INSERT INTO `ad` (`ad_id`, `member_id`, `type`, `rooms`, `area`, `price`, `address`, `city`, `municipality`, `publicated`) 
+              VALUES (NULL, '$member_id', '$type', '$rooms', '$area', '$price', '$address', '$city', '$municipality', 'no')";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-
-    // loopar över arrayen som har resultatet från db
-    // while($rowLast = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    // }
 
     header("Location:steg2.php");
   } else {
