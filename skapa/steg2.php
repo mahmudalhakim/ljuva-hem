@@ -10,7 +10,7 @@
   $stmt->execute();
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  $id = htmlspecialchars($row['ad_id']);
+  $ad_id = htmlspecialchars($row['ad_id']);
   $type = htmlspecialchars($row['type']);
   $rooms = htmlspecialchars($row['rooms']);
   $area = htmlspecialchars($row['area']);
@@ -19,8 +19,15 @@
   $city = htmlspecialchars($row['city']);
   $municipality = htmlspecialchars($row['municipality']);
 
+  echo '<input type="hidden" id="loginStatus" name="loginStatus" value="true">
+  <nav class="nav__login">
+    <ul>
+      <li><a href="../logout-logic.php" id="login">Logga ut</a></li>
+    </ul>
+  </nav>
+  </header>
 
-  echo '
+  <main>
   <section class="section__create">
     <h1>Skapa annons</h1>
     <nav class="create__nav">
@@ -31,9 +38,9 @@
         <li class="create__nav--step"><h3>4 - Klart</h3></li>
       </ul>
     </nav>
-    <form action="steg2-logic.php?id='.$id.'" class="form__sell" method="post">
+    <form action="steg2-logic.php?ad_id='.$ad_id.'" class="form__sell" method="post">
       <h3>2 - Beskrivning</h3>
-      <h4 class="create__nav--step">'.$address.', '.$city.'"</h4>
+      <h4 class="create__nav--step">'.$address.', '.$city.'</h4>
       <label for="tagline">Kort beskrivning (max 300 tecken)</label><br>
       <textarea rows="4" class="form__input--create" name="tagline" id="tagline" placeholder="Kort beskrivning..."></textarea>
       <br><br>
@@ -44,16 +51,20 @@
     </form>
   </section>';
   } else {
-    echo "
-    <section class='section__create'>
+    echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
+    <nav class="nav__login">
+      <ul>
+        <li><a href="../login.php" id="login">Logga in</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section__create">
       <h3>Logga in för att se dina annonser</h3>
-      <a href='../login.php'><button class='btn__small'>Logga in</button></a>
-    </section>";
+      <a href="../login.php"><button class="btn__small">Logga in</button></a>
+    </section>';
   }
-?>
-
-<script src="../js/form_products.js"></script>
-
-<?php
+  
   require_once 'footer.php';
 ?>

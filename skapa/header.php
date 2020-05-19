@@ -19,11 +19,3 @@
       <li><a href="index.php" class="nav__link nav__link--sell link__active">Sälja</a></li>
     </ul>
   </nav>
-  <nav class="nav__login">
-    <ul>
-      <li><a href="../login.php" id="loginStatus">Logga in</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>

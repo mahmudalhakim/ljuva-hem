@@ -18,11 +18,24 @@
       <li><a href="skapa/index.php">Sälja</a></li>
     </ul>
   </nav>
-  <nav class="nav__login">
-    <ul>
-      <li><a href="login.php" id="loginStatus">Logga in</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
+<?php
+  if (isset($_SESSION['loggedintoljuvahem']) && $_SESSION['loggedintoljuvahem'] == true) {
+    echo '<input type="hidden" id="loginStatus" name="loginStatus" value="true">
+    <nav class="nav__login">
+      <ul>
+        <li><a href="logout-logic.php" id="login">Logga ut</a></li>
+      </ul>
+    </nav>
+    </header>
+    <main>';
+    } else {
+      echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
+      <nav class="nav__login">
+        <ul>
+          <li><a href="login.php" id="login">Logga in</a></li>
+        </ul>
+      </nav>
+      </header>
+      <main>';
+    }
+?>

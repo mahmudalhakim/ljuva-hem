@@ -1,9 +1,19 @@
 <?php
+  require_once '../db.php';
   session_start();
   require_once 'header.php';
 
   if (isset($_SESSION['loggedintoljuvahem']) && $_SESSION['loggedintoljuvahem'] == true) {
-  echo '
+  echo '<input type="hidden" id="loginStatus" name="loginStatus" value="true">
+  <nav class="nav__login">
+    <ul>
+      <li><a href="../logout-logic.php" id="login">Logga ut</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <main>
+
   <section class="section__create">
     <h1>Skapa annons</h1>
     <nav class="create__nav">
@@ -49,9 +59,19 @@
         <button type="submit" class="form__submit_btn--create">Till steg - 2</button>
       </form>';
 } else {
-  echo '<section class="section__create">
-          <h3>Logga in för att se dina annonser</h3>
-            <a href="../login.php"><button class="btn__small">Logga in</button></a>';
+  echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
+  <nav class="nav__login">
+    <ul>
+      <li><a href="../login.php" id="login">Logga in</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="section__create">
+    <h3>Logga in för att se dina annonser</h3>
+    <a href="../login.php"><button class="btn__small">Logga in</button></a>
+  </section>';
 }
 ?>
 
@@ -59,7 +79,6 @@
 
 <script src="../js/form_products.js"></script>
 <script src="../js/select-municipalities.js"></script>
-<script src="../js/logout.js"></script>
 
 <?php
   require_once 'footer.php';

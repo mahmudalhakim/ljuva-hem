@@ -9,9 +9,11 @@ require_once '../db.php';
     $address = htmlspecialchars($_POST['address']);
     $city = htmlspecialchars($_POST['city']);
     $municipality = htmlspecialchars($_POST['municipality']);
+    session_start();
+    $member_id = htmlspecialchars($_SESSION['member_id']);
             
-    $sql  = " INSERT INTO `ad` (`ad_id`, `type`, `rooms`, `area`, `price`, `address`, `city`, `municipality`) 
-              VALUES (NULL, '$type', '$rooms', '$area', '$price', '$address', '$city', '$municipality')";
+    $sql  = " INSERT INTO `ad` (`ad_id`, `member_id`, `type`, `rooms`, `area`, `price`, `address`, `city`, `municipality`) 
+              VALUES (NULL, '$member_id', '$type', '$rooms', '$area', '$price', '$address', '$city', '$municipality')";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
