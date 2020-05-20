@@ -92,9 +92,9 @@ function checkSpaces(formName, inputName, feedbackId){
 function checkLength(formName, inputName, feedbackId){
   // check if right input lenght
   let input = document.forms[formName][inputName].value;
-  if (input.length < 2 || input.length > 30) {
-    if (input.length > 30) {
-      document.getElementById(feedbackId).innerHTML = "Max 30 bokstäver";
+  if (input.length < 2 || input.length > 40) {
+    if (input.length > 40) {
+      document.getElementById(feedbackId).innerHTML = "Max 40 bokstäver";
     } else {
       document.getElementById(feedbackId).innerHTML = "Minst två bokstäver";
     }

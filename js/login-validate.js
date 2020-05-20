@@ -25,9 +25,9 @@ function validateForm(){
 function checkLength(formName, inputName, feedbackId){
   // check if right input lenght
   let input = document.forms[formName][inputName].value;
-  if (input.length < 5 || input.length > 20) {
-    if (input.length > 20) {
-      document.getElementById(feedbackId).innerHTML = "Max 20 tecken";
+  if (input.length < 5 || input.length > 40) {
+    if (input.length > 40) {
+      document.getElementById(feedbackId).innerHTML = "Max 40 tecken";
     } else {
       document.getElementById(feedbackId).innerHTML = "Minst 5 tecken";
     }
