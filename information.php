@@ -14,29 +14,37 @@ require_once 'db.php';
   while (  $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
 
     $ad_id = htmlspecialchars($row['ad_id']);
+    $member_id = htmlspecialchars($row['member_id']);
     $type = htmlspecialchars($row['type']);
     $rooms = htmlspecialchars($row['rooms']);
     $area = htmlspecialchars($row['area']);
     $price = htmlspecialchars($row['price']);
+    $rent = htmlspecialchars($row['rent']);
     $address = htmlspecialchars($row['address']);
     $city = htmlspecialchars($row['city']);
     $municipality = htmlspecialchars($row['municipality']);
     $tagline = htmlspecialchars($row['tagline']);
     $description = htmlspecialchars($row['description']);
     $images = htmlspecialchars($row['images']);
+    $publication_date = htmlspecialchars($row['publication_date']);
+    $publicated = htmlspecialchars($row['publicated']);
 
     $ad = array(
                     "ad_id" => $ad_id,
+                    "member_id" => $member_id,
                     "type" => $type,
                     "rooms" => $rooms,
                     "area" => $area,
                     "price" => $price,
+                    "rent" => $rent,
                     "address" => $address,
                     "city" => $city,
                     "municipality" => $municipality,
                     "tagline" => $tagline,
                     "description" => $description,
-                    "images" => $images
+                    "images" => $images,
+                    "publication_date" => $publication_date,
+                    "publicated" => $publicated
                   );
     $ads[] = $ad;
   }

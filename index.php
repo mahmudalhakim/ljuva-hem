@@ -48,7 +48,8 @@
 
 <section id="addSection"></section> 
 
-<script src="js/display_products.js"></script>
+<!-- <script src="js/display_products.js"></script> -->
+<script src="js/display-ads.js"></script>
 <script src="js/form_products.js"></script>
 
 <?php
