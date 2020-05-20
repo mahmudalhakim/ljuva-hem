@@ -244,6 +244,11 @@ button:hover {
   border: 1px solid #ff927a;
 }
 
+.form__feedback {
+  color: #ff927a;
+  margin-top: 0;
+}
+
 .create__nav ul {
   display: -ms-grid;
   display: grid;

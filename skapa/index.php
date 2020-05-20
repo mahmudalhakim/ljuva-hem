@@ -26,7 +26,10 @@
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
+    $result = false;
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      $result = true;
+
       $ad_id = htmlspecialchars($row['ad_id']);
       $type = htmlspecialchars($row['type']);
       $rooms = htmlspecialchars($row['rooms']);
@@ -91,6 +94,9 @@
       //     <td><p>$price kr</p></td>
       //   </tr>
       // </table>";
+      }
+      if(!$result){
+        echo "<p>Det finns inga annonser att visa</p>";
       }
 
     echo  '</section>';

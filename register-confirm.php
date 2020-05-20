@@ -10,7 +10,6 @@
     $passwordEntered = htmlspecialchars($_POST['password']);
     $password = password_hash($passwordEntered, PASSWORD_DEFAULT);
 
-
     // check if member is allready registered
     $sqlCheckForMember  = "SELECT `email` FROM `member` WHERE `email` LIKE '$email'";
     $stmtCheckForMember = $db->prepare($sqlCheckForMember);
@@ -26,15 +25,21 @@
                 VALUES (NULL, '$firstname', '$surname', '$email', '$password')";
       $stmt = $db->prepare($sql);
       $stmt->execute();
-      echo "<p>Nytt konto skapades</p><br>
-      <a href='login.php'><button class='form__submit_btn'>Logga in</button></a>";
+      echo "<section class='section__create'>
+      <p>Nytt konto skapades</p><br>
+      <a href='login.php'><button class='form__submit_btn'>Logga in</button></a>
+      </section>";
 
     } else {
-      echo "<p>Tyvärr, konto kunde inte skapas. E-mailen har redan registrerats.</p><br>
-      <a href='login.php'><button class='form__submit_btn'>Logga in</button></a>";
+      echo "<section class='section__create'>
+      <p>Tyvärr, konto kunde inte skapas. E-mailen har redan registrerats.</p><br>
+      <a href='login.php'><button class='form__submit_btn'>Logga in</button></a>
+      </section>";
     }
   } else {
-    echo "Hoppsan, nu blev det nått fel!<br><a href='login.php'>Tillbaka</a>";
+    echo "<section class='section__create'>
+    Hoppsan, nu blev det nått fel!<br><a href='register.php'>Tillbaka</a> 
+    </section>";
   }
 
   require_once 'footer.php'
