@@ -41,22 +41,28 @@ function validateForm(){
     allValidatedOK = false
   }
 
-  // check if passwords are the same before saving in db
+  // check password
   document.getElementById('passwordFeedback').innerHTML = "";
   document.getElementById('password2Feedback').innerHTML = "";
   let password1 = document.forms['register']['password'].value;
+  passwordCheck = checkPassword('register','password','passwordFeedback')
+  if(passwordCheck == false){
+    allValidatedOK = false
+  }
   let password2 = document.forms['register']['password2'].value;
+  password2Check = checkPassword('register','password2','password2Feedback')
+  if(password2Check == false){
+    allValidatedOK = false
+  }
+
+  // check if both entered passwords are the same before saving in db
   if (password1 !== password2){
     document.getElementById('passwordFeedback').innerHTML = "Lösenorden matchar inte";
     document.getElementById('password2Feedback').innerHTML = "Lösenorden matchar inte";
     allValidatedOK = false
   }
 
-  if (allValidatedOK == false) {
-    return false;
-  } else {
-    return false;
-  }
+  return allValidatedOK
 }
 
 function checkLetters(formName, inputName, feedbackId){
@@ -104,6 +110,25 @@ function checkEmail(formName, inputName, feedbackId){
   let includesDot = input.includes('.');
   if (onlyLetters == false || includesAt == false || includesDot == false) {
     document.getElementById(feedbackId).innerHTML = "Fel format på e-mail";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkPassword(formName, inputName, feedbackId){
+  // check for allowed characters & length
+  let input = document.forms[formName][inputName].value;
+  let allowedCharacters = /^[a-zA-Z-_ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789!@#$%^&*]*$/.test(input);
+  if (allowedCharacters == false) {
+    document.getElementById(feedbackId).innerHTML = "Fel format på lösenord. Tillåtna tecken är bokstäver, siffror och !@#$%^&*-_";
+    return false;
+  } else if (input.length < 5 || input.length > 20) {
+    if (input.length < 5) {
+      document.getElementById(feedbackId).innerHTML = "Lösenordet måste vara minst 5 tecken";
+    } else {
+      document.getElementById(feedbackId).innerHTML = "Lösenordet får vara max 20 tecken";
+    }
     return false;
   } else {
     return true;
