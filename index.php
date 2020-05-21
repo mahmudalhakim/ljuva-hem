@@ -3,7 +3,7 @@
   require_once 'header.php';
 ?>
 
-<select class="hero">
+<section class="hero">
   <form action="" name="search" class="adForm">
     <input type="text" class="form__input" placeholder="Skriv område eller adress"><br><br>
       <button class="form__button form__button--active" id="all-btn">Alla typer</button>
@@ -43,7 +43,7 @@
     <button class="form__submit_btn">Hitta bostäder till salu</button>
     <button class="form__reset_btn">Nollställ</button>  
   </form>  
-</select>
+</section>
 
 <section id="picSection"></section> 
 

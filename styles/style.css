@@ -66,12 +66,6 @@ header nav ul li a.nav__link--sell:hover {
   border-bottom: 1px solid #ff927a;
 }
 
-.hero {
-  background-image: url("../images/fancy.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 #addSection {
   display: -webkit-box;
   display: -ms-flexbox;
