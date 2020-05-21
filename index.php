@@ -4,14 +4,14 @@
 ?>
 
 <section class="hero">
-  <form action="" name="search">
+  <form action="" name="search" class="adForm">
     <input type="text" class="form__input" placeholder="Skriv område eller adress"><br><br>
       <button class="form__button form__button--active" id="all-btn">Alla typer</button>
-      <button class="form__button" id="flat-btn">Lägenheter</button>
-      <button class="form__button" id="house-btn">Villor</button>
-      <button class="form__button" id="townhouse-btn">Radhus</button>
-      <button class="form__button" id="country-btn">Fritidshus</button>
-      <button class="form__button" id="other-btn">Övrigt</button><br><br>
+      <button class="form__button form__button--choice" id="flat-btn">Lägenheter</button>
+      <button class="form__button form__button--choice" id="house-btn">Villor</button>
+      <button class="form__button form__button--choice" id="townhouse-btn">Radhus</button>
+      <button class="form__button form__button--choice" id="country-btn">Fritidshus</button>
+      <button class="form__button form__button--choice" id="other-btn">Övrigt</button><br><br>
       <div id="more-options">
         <table>
           <thead>
@@ -39,7 +39,8 @@
         </table>
       </div>
     <br>
-    <button type="submit" class="form__submit_btn">Hitta bostäder till salu</button>
+    <!-- <button type="submit" class="form__submit_btn">Hitta bostäder till salu</button> -->
+    <button class="form__submit_btn">Hitta bostäder till salu</button>
     <button class="form__reset_btn">Nollställ</button>  
   </form>  
 </section>

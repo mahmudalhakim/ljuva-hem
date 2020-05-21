@@ -67,7 +67,7 @@ header nav ul li a.nav__link--sell:hover {
 }
 
 .hero {
-  background-image: url("images/fancy.png");
+  background-image: url("../images/fancy.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -78,7 +78,11 @@ header nav ul li a.nav__link--sell:hover {
   display: flex;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
-  padding: 1rem;
+  padding: 0 10vw;
+}
+
+.adForm {
+  padding: 5vw 10vw;
 }
 
 .product, .ad {
@@ -144,6 +148,7 @@ header nav ul li a.nav__link--sell:hover {
 
 @media screen and (min-width: 600px) {
   .product-info {
+    padding-top: 2vw;
     width: 50%;
   }
 }

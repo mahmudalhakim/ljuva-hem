@@ -4,7 +4,7 @@ fetch('information.php')
   .then(ads => showAds(ads))
 
 
-// funktion som ritar ut ordrar i DOM
+// show ads in DOM
 function showAds(ads) {
   for (let i = 0; i < ads.length; i++) {
     document.getElementById("addSection").innerHTML += 
@@ -17,7 +17,7 @@ function showAds(ads) {
         <p class="city">${ads[Object.keys(ads)[i]].city}</p>
         <p class="city">${ads[Object.keys(ads)[i]].tagline}</p>
         <table>
-          <td><p>${ads[Object.keys(ads)[i]].price.toLocaleString().replace(',',' ').replace(',',' ')} kr</p></td>
+          <td><p>${parseInt(ads[Object.keys(ads)[i]].price).toLocaleString().replace(',',' ').replace(',',' ')} kr</p></td>
           <td><p>${ads[Object.keys(ads)[i]].area} m²</p></td>
           <td><p>${ads[Object.keys(ads)[i]].rooms} rum</p></td>
         </table>

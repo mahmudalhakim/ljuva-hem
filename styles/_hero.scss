@@ -7,7 +7,11 @@
 #addSection {
   display: flex;
   flex-flow: wrap;
-  padding: 1rem;
+  padding: 0 10vw;
+}
+
+.adForm {
+  padding: 5vw 10vw;
 }
 
 .product, .ad {
@@ -55,6 +59,7 @@
 .product-info {
   padding-left: 2rem;
   @media screen and (min-width: 600px) {
+    padding-top: 2vw;
     width: 50%;
   }
 }
