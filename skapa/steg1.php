@@ -77,7 +77,7 @@
 
 </section>
 
-<script src="../js/form_products.js"></script>
+<script src="../js/set-up-form.js"></script>
 <script src="../js/select-municipalities.js"></script>
 
 <?php

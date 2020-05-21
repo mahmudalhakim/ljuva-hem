@@ -3,7 +3,7 @@
   require_once 'header.php';
 ?>
 
-<section class="hero">
+<select class="hero">
   <form action="" name="search" class="adForm">
     <input type="text" class="form__input" placeholder="Skriv område eller adress"><br><br>
       <button class="form__button form__button--active" id="all-btn">Alla typer</button>
@@ -43,7 +43,7 @@
     <button class="form__submit_btn">Hitta bostäder till salu</button>
     <button class="form__reset_btn">Nollställ</button>  
   </form>  
-</section>
+</select>
 
 <section id="picSection"></section> 
 
@@ -51,7 +51,7 @@
 
 <!-- <script src="js/display_products.js"></script> -->
 <script src="js/display-ads.js"></script>
-<script src="js/form_products.js"></script>
+<script src="js/set-up-form.js"></script>
 
 <?php
   require_once 'footer.php';

@@ -26,7 +26,7 @@
 
 </section>
 
-<script src="js/login-validate.js"></script>
+<script src="js/validate-login.js"></script>
 
 <?php
   require_once 'footer.php';

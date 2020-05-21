@@ -32,7 +32,7 @@
     </form>  
 </section>
 
-<script src="js/register-validate.js"></script>
+<script src="js/validate-register.js"></script>
 
 <?php
   require_once 'footer.php';
