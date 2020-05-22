@@ -57,11 +57,11 @@
           $typeText = 'Övrigt';
           break;
       }
-      $publicated = htmlspecialchars($row['publicated']);
-      if($publicated ==  'no'){
-        $publicatedText = 'Väntar på godkännande';
+      $published = htmlspecialchars($row['published']);
+      if($published ==  'no'){
+        $publishedText = 'Väntar på godkännande';
       } else {
-        $publicatedText = 'Publicerad';
+        $publishedText = 'Publicerad';
       }
 
       echo "<div id='$ad_id' class='ad'>
@@ -71,7 +71,7 @@
       </div>";
       echo "<div class='product-info'>
           <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Ta bort</button></a>
-          <p>$publicatedText</p>
+          <p>$publishedText</p>
           <h3>$address, $city</h3>
           <p class=''>$municipality kommun</p>
           <table>

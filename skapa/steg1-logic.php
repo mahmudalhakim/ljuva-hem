@@ -12,7 +12,7 @@ require_once '../db.php';
     session_start();
     $member_id = htmlspecialchars($_SESSION['member_id']);
             
-    $sql  = " INSERT INTO `ad` (`ad_id`, `member_id`, `type`, `rooms`, `area`, `price`, `address`, `city`, `municipality`, `publicated`) 
+    $sql  = " INSERT INTO `ad` (`ad_id`, `member_id`, `type`, `rooms`, `area`, `price`, `address`, `city`, `municipality`, `published`) 
               VALUES (NULL, '$member_id', '$type', '$rooms', '$area', '$price', '$address', '$city', '$municipality', 'no')";
     $stmt = $db->prepare($sql);
     $stmt->execute();

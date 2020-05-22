@@ -5,7 +5,7 @@
 
 <section class="hero">
   <form name="search" class="adForm">
-    <input type="text" class="form__input" placeholder="Skriv område eller adress"><br><br>
+    <input type="text" class="form__input" placeholder="Skriv område eller adress" id="inputAddress"><br><br>
       <button class="form__button form__button--active" id="all-btn">Alla typer</button>
       <button class="form__button form__button--choice" id="flat">Lägenheter</button>
       <button class="form__button form__button--choice" id="house">Villor</button>
@@ -57,7 +57,7 @@
 
 <section id="picSection"></section> 
 
-<section id="addSection"></section> 
+<section id="adSection"></section> 
 
 <!-- <script src="js/display_products.js"></script> -->
 <script src="js/display-ads.js"></script>

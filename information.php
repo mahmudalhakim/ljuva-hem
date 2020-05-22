@@ -27,7 +27,7 @@ require_once 'db.php';
     $description = htmlspecialchars($row['description']);
     $images = htmlspecialchars($row['images']);
     $publication_date = htmlspecialchars($row['publication_date']);
-    $publicated = htmlspecialchars($row['publicated']);
+    $published = htmlspecialchars($row['published']);
 
     $ad = array(
                     "ad_id" => $ad_id,
@@ -44,7 +44,7 @@ require_once 'db.php';
                     "description" => $description,
                     "images" => $images,
                     "publication_date" => $publication_date,
-                    "publicated" => $publicated
+                    "published" => $published
                   );
     $ads[] = $ad;
   }

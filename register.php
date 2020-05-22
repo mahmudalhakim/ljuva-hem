@@ -4,7 +4,6 @@
 
 ?>
   
-
   <section class="section__create">
     <h1>Registrering</h1>
     <form action="register-confirm.php" name="register" method="post" onsubmit="return validateForm()" >
@@ -30,7 +29,7 @@
       <br>
       <button type="submit" class="form__submit_btn">Bli medlem</button>
     </form>  
-</section>
+  </section>
 
 <script src="js/validate-register.js"></script>
 
