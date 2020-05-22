@@ -66,6 +66,18 @@ header nav ul li a.nav__link--sell:hover {
   border-bottom: 1px solid #ff927a;
 }
 
+header nav ul li a.nav__link--admin {
+  color: #3a2e58;
+}
+
+header nav ul li a.nav__link--admin:hover {
+  border-bottom: 1px solid #3a2e58;
+}
+
+a.login--admin {
+  color: #3a2e58;
+}
+
 #adSection {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -132,6 +144,10 @@ header nav ul li a.nav__link--sell:hover {
   padding: 1rem;
 }
 
+.ad--admin {
+  border: 1px solid #3a2e58;
+}
+
 .ad + .ad {
   margin-top: 1.5rem;
 }
@@ -190,6 +206,18 @@ button {
   border: 1px solid white;
 }
 
+.ad__button--delete {
+  background: #ff0000;
+  color: white;
+  border: 1px solid #ff0000;
+}
+
+.ad__button--delete:hover {
+  background: white;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+
 form {
   background: white;
   -webkit-box-sizing: border-box;
@@ -199,6 +227,11 @@ form {
 
 .form__sell {
   border: 1px solid #ff927a;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.form__admin {
+  border: 1px solid #3a2e58;
   padding: 1rem 2rem 2rem 2rem;
 }
 
@@ -217,6 +250,11 @@ form {
   width: 100%;
   max-width: 500px;
   font-weight: 600;
+}
+
+.form__submit_btn--admin {
+  background: #3a2e58;
+  border: 1px solid #3a2e58;
 }
 
 button:hover {
@@ -241,6 +279,10 @@ button:hover {
 
 .form__input--create {
   border: 1px solid #ff927a;
+}
+
+.form__input--admin {
+  border: 2px solid #3a2e58;
 }
 
 .form__feedback {
@@ -296,6 +338,10 @@ button:hover {
 
 .footer__sell {
   color: #ff927a;
+}
+
+.footer__admin {
+  color: #3a2e58;
 }
 
 * {

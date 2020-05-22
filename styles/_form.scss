@@ -24,6 +24,17 @@ button {
   }
 }
 
+.ad__button--delete  {
+  background: $main--warning;
+  color: white;
+  border: 1px solid $main--warning;
+  &:hover {
+    background: white;
+    color: $main--warning;
+    border: 1px solid $main--warning;
+  }
+}
+
 form {
   background: white;
   box-sizing: border-box;
@@ -32,6 +43,11 @@ form {
 
 .form__sell {
   border: 1px solid $main--sell;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.form__admin {
+  border: 1px solid $main--admin;
   padding: 1rem 2rem 2rem 2rem;
 }
 
@@ -50,6 +66,11 @@ form {
   width: 100%;
   max-width: 500px;
   font-weight: 600;
+}
+
+.form__submit_btn--admin {
+  background: $main--admin;
+  border: 1px solid $main--admin;
 }
 
 button:hover {
@@ -73,6 +94,10 @@ button:hover {
 
 .form__input--create {
   border: 1px solid $main--sell;
+}
+
+.form__input--admin {
+  border: 2px solid $main--admin;
 }
 
 .form__feedback {

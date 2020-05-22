@@ -6,6 +6,7 @@
 <section class="hero">
   <form name="search" class="adForm">
     <input type="text" class="form__input" placeholder="Skriv område eller adress" id="inputAddress"><br><br>
+    <p class="form__feedback" id="inputFeedback"></p>
       <button class="form__button form__button--active" id="all-btn">Alla typer</button>
       <button class="form__button form__button--choice" id="flat">Lägenheter</button>
       <button class="form__button form__button--choice" id="house">Villor</button>

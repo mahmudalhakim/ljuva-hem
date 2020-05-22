@@ -11,7 +11,6 @@ header {
     align-items: center;
     &.nav__login ul li a {
       color: $mainColor;
-      
       &:hover {
         border-bottom: 2px solid $mainColor;
       }
@@ -42,7 +41,16 @@ header {
             border-bottom: 1px solid $main--sell;
           }
         }
+        a.nav__link--admin {
+          color: $main--admin;
+          &:hover {
+            border-bottom: 1px solid $main--admin;
+          }
+        }
       }
     }
   }
+}
+a.login--admin {
+  color: $main--admin;
 }

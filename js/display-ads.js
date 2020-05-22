@@ -10,54 +10,67 @@ function handleAds(ads) {
   const priceSelect = document.getElementById("price")
   const rentSelect = document.getElementById("rent")
   const searchInput = document.getElementById("inputAddress")
+  // FORCE CLICK!
+  // searchInput.addEventListener("keyup", function(event) {
+  //   if (event.keyCode === 13) {
+  //     event.preventDefault();
+  //     submitBtn.click();
+  //   }
+  // });
   // check user input on submit
   submitBtn.addEventListener('click', function filterAds(event) {
     event.preventDefault()
     // onlys show published ads
     let publishedAds = ads.filter(ad => ad.published == "yes")
-    // check input from user
-    let userInput = publishedAds.filter(ad => 
-      ad.municipality.toLowerCase().includes(searchInput.value.toLowerCase()) || 
-      ad.city.toLowerCase().includes(searchInput.value.toLowerCase()) || 
-      ad.address.toLowerCase().includes(searchInput.value.toLowerCase())
-    )
-    // check min number of rooms 
-    let filterRooms = userInput.filter(ad => ad.rooms >= parseFloat(roomSelect.value))
-    // check min area
-    let filterArea = filterRooms.filter(ad => ad.area >= parseFloat(areaSelect.value))
-    // check max price
-    let filterPrice = filterArea.filter(ad => ad.price <= parseFloat(priceSelect.value))
-    // check max rent
-    let filterRent = filterPrice.filter(ad => ad.rent <= parseFloat(rentSelect.value))
-    // check which buttons that are checked
-    let btnTypes = document.querySelectorAll('.form__button--active')
-    let filterTypes
-    // either show all ads or only selected type of ads
-    if (btnTypes[0].id == "all-btn" || btnTypes.length > 4) {
-      filterTypes = filterRent
+    // check input from user if ok --> filter, otherwise --> feedback
+
+    let input = searchInput.value
+    let onlyLetters = /^[a-zA-Z- ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789]*$/.test(input);
+    document.getElementById("inputFeedback").innerHTML = "";
+    if (onlyLetters == false) {
+      document.getElementById("inputFeedback").innerHTML = "Fel format på sökning";
     } else {
-      switch (btnTypes.length) {
-        case 1: filterTypes = filterRent.filter(ad =>
-          ad.type == btnTypes[0].id)
-          break;
-        case 2: filterTypes = filterRent.filter(ad =>
-          ad.type == btnTypes[0].id ||
-          ad.type == btnTypes[1].id)
-          break;
-        case 3: filterTypes = filterRent.filter(ad =>
-          ad.type == btnTypes[0].id ||
-          ad.type == btnTypes[1].id ||
-          ad.type == btnTypes[2].id)
-          break;
-        case 4: filterTypes = filterRent.filter(ad =>
-          ad.type == btnTypes[0].id ||
-          ad.type == btnTypes[1].id ||
-          ad.type == btnTypes[2].id ||
-          ad.type == btnTypes[3].id)
-          break;
+      // filter by user input
+      let filteredByInput = publishedAds.filter(ad => 
+        ad.municipality.toLowerCase().includes(searchInput.value.toLowerCase()) || 
+        ad.city.toLowerCase().includes(searchInput.value.toLowerCase()) || 
+        ad.address.toLowerCase().includes(searchInput.value.toLowerCase())
+      )
+      // filter by select choices
+      let filteredByRooms = filteredByInput.filter(ad => ad.rooms >= parseFloat(roomSelect.value))
+      let filteredByArea = filteredByRooms.filter(ad => ad.area >= parseFloat(areaSelect.value))
+      let filteredByPrice = filteredByArea.filter(ad => ad.price <= parseFloat(priceSelect.value))
+      let filteredByRent = filteredByPrice.filter(ad => ad.rent <= parseFloat(rentSelect.value))
+      // filter by which choice buttons that are checked
+      let btnTypes = document.querySelectorAll('.form__button--active')
+      let filteredByTypes
+      // either show all ads or only selected type of ads
+      if (btnTypes[0].id == "all-btn" || btnTypes.length > 4) {
+        filteredByTypes = filteredByRent
+      } else {
+        switch (btnTypes.length) {
+          case 1: filteredByTypes = filteredByRent.filter(ad =>
+            ad.type == btnTypes[0].id)
+            break;
+          case 2: filteredByTypes = filteredByRent.filter(ad =>
+            ad.type == btnTypes[0].id ||
+            ad.type == btnTypes[1].id)
+            break;
+          case 3: filteredByTypes = filteredByRent.filter(ad =>
+            ad.type == btnTypes[0].id ||
+            ad.type == btnTypes[1].id ||
+            ad.type == btnTypes[2].id)
+            break;
+          case 4: filteredByTypes = filteredByRent.filter(ad =>
+            ad.type == btnTypes[0].id ||
+            ad.type == btnTypes[1].id ||
+            ad.type == btnTypes[2].id ||
+            ad.type == btnTypes[3].id)
+            break;
+        }
       }
-    }
-    showAds(filterTypes)
+      showAds(filteredByTypes)
+      }
   })
 }
 

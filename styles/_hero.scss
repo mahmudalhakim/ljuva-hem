@@ -52,6 +52,10 @@
   padding: 1rem;
 }
 
+.ad--admin {
+  border: 1px solid $main--admin;
+}
+
 .ad + .ad {
   margin-top: 1.5rem;
 }
