@@ -4,20 +4,19 @@
 ?>
 
 <section class="hero">
-  <form action="" name="search" class="adForm">
+  <form name="search" class="adForm">
     <input type="text" class="form__input" placeholder="Skriv område eller adress"><br><br>
       <button class="form__button form__button--active" id="all-btn">Alla typer</button>
-      <button class="form__button form__button--choice" id="flat-btn">Lägenheter</button>
-      <button class="form__button form__button--choice" id="house-btn">Villor</button>
-      <button class="form__button form__button--choice" id="townhouse-btn">Radhus</button>
-      <button class="form__button form__button--choice" id="country-btn">Fritidshus</button>
-      <button class="form__button form__button--choice" id="other-btn">Övrigt</button><br><br>
+      <button class="form__button form__button--choice" id="flat">Lägenheter</button>
+      <button class="form__button form__button--choice" id="house">Villor</button>
+      <button class="form__button form__button--choice" id="townhouse">Radhus</button>
+      <button class="form__button form__button--choice" id="countryhouse">Fritidshus</button>
+      <button class="form__button form__button--choice" id="other">Övrigt</button><br><br>
       <div id="more-options">
         <table>
           <thead>
-            <th>Antal rum</th>
+            <th>Minst antal rum</th>
             <th>Boarea</th>
-            <th>Högsta pris</th>
           </thead>
           <tr>
             <td>
@@ -30,9 +29,20 @@
                 <option value="0">Alla</option>
               </select>
             </td>
+          </tr>
+          <thead>
+            <th><br>Högst pris</th>
+            <th><br>Högst avgift</th>
+          </thead>
+          <tr>
             <td>
               <select name="" id="price">
-                <option value="0">Inget</option>
+                <option value="10000000">Alla</option>
+              </select>
+            </td>
+            <td>
+              <select name="" id="rent">
+                <option value="10000000">Alla</option>
               </select>
             </td>
           </tr>

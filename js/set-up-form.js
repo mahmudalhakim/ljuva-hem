@@ -48,24 +48,32 @@ function setSelectOptions(){
   let roomSelect = document.getElementById("rooms")
   let areaSelect = document.getElementById("area")
   let priceSelect = document.getElementById("price")
+  let rentSelect = document.getElementById("rent")
   // rooms
-  for(let i = 1; i <= 16; i++){
-    if( i <= 15 ){ roomSelect.innerHTML += `<option value="${i}">${i}</option>` }
-    if( i < 15 ){ roomSelect.innerHTML += `<option value="${i+0.5}">${i+0.5}</option>` }
-    if( i > 14 && i%15==0 ){ roomSelect.innerHTML += `<option value="${i}">Över 15</option>` }
+  for(let i = 1; i <= 15; i++){
+    if( i <= 8 ){ roomSelect.innerHTML += `<option value="${i}">minst ${i}</option>` }
+    if( i < 4 ){ roomSelect.innerHTML += `<option value="${i+0.5}">minst ${i+0.5}</option>` }
+    if( i == 10 ){ roomSelect.innerHTML += `<option value="${i}">minst ${i}</option>` }
+    if( i == 15 ){ roomSelect.innerHTML += `<option value="${i}">minst ${i}</option>` }
   }
   // area
-  for( let i = 20; i <= 250; i = i+5 ){
+  for( let i = 20; i <= 250; i += 5 ){
     if( i <= 155 ){ areaSelect.innerHTML += `<option value="${i}">minst ${i} m²</option>`} 
     else if( i <= 180 && i%10 == 0 ){ areaSelect.innerHTML += `<option value="${i}">minst ${i} m²</option>` } 
     else if ( i <= 200 && i%200 == 0 ){ areaSelect.innerHTML += `<option value="${i}">minst ${i} m²</option>` } 
     else if ( i <= 250 && i%50 == 0 ){ areaSelect.innerHTML += `<option value="${i}">minst ${i} m²</option>` }
   }
   // price 
-  for( let i = 100000; i <= 13000000; i = i + 50000){
+  for( let i = 100000; i <= 13000000; i += 50000){
     if( i <= 150000 && i%100000 == 0){ priceSelect.innerHTML += `<option value="${i}">${i.toLocaleString().replace(',',' ')} kr</option>` } 
     else if (i <= 2500000 && i%250000 == 0){ priceSelect.innerHTML += `<option value="${i}">${i.toLocaleString().replace(',',' ').replace(',',' ')} kr</option>` } 
     else if ( i <= 6000000 & i%500000 == 0){ priceSelect.innerHTML += `<option value="${i}">${i.toLocaleString().replace(',',' ').replace(',',' ')} kr</option>` } 
     else if ( i <= 13000000 & i%1000000 == 0){ priceSelect.innerHTML += `<option value="${i}">${i.toLocaleString().replace(',',' ').replace(',',' ')} kr</option>` }
+  }
+  // rent 
+  for( let i = 0; i <= 20000; i += 500){
+    if( i <= 5000 && i%500 == 0){ rentSelect.innerHTML += `<option value="${i}">${i.toLocaleString().replace(',',' ')} kr</option>` } 
+    else if ( i <= 9000 & i%1000 == 0){ rentSelect.innerHTML += `<option value="${i}">${i.toLocaleString().replace(',',' ').replace(',',' ')} kr</option>` } 
+    else if ( i <= 20000 & i%5000 == 0){ rentSelect.innerHTML += `<option value="${i}">${i.toLocaleString().replace(',',' ').replace(',',' ')} kr</option>` }
   }
 }
