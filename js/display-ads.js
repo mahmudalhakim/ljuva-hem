@@ -73,7 +73,7 @@ function handleAds(ads) {
       }
   })
 }
-
+console.log("faf")
 // show ads in DOM
 function showAds(ads) {
   let adSection = document.getElementById("adSection")
@@ -99,14 +99,15 @@ function showAds(ads) {
           typeText = 'Övrigt';
           break;
       }
+      console.log(ads[Object.keys(ads)[i]].ad_id)
       adSection.innerHTML +=
         `<div id="${Object.keys(ads)[i]}" class="product">
           <div>
-            <img src="images/${ads[Object.keys(ads)[i]].images}">
+            <a href="ad.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}"><img src="images/${ads[Object.keys(ads)[i]].images}"></a>
           </div>
           <div class="product-info">
             <p class="city">${typeText.toUpperCase()}</p>
-            <h3>${ads[Object.keys(ads)[i]].address}</h3>
+            <a href="ad.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}"><h3>${ads[Object.keys(ads)[i]].address}</h3></a>
             <p class="city">${ads[Object.keys(ads)[i]].city}</p>
             <p class="city">${ads[Object.keys(ads)[i]].tagline}</p>
             <br>
@@ -124,6 +125,7 @@ function showAds(ads) {
               <td><p>${parseInt(ads[Object.keys(ads)[i]].rent).toLocaleString().replace(',', ' ').replace(',', ' ')} kr</p></td>
             </tr>
             </table>
+            <a href="ad.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}">Läs mer</a>
           </div>
         </div>`
     }

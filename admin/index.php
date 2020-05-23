@@ -6,7 +6,7 @@
 
     echo '
     <section class="section__create">
-        <h1>Hantera annonser</h1>';
+        <h1>Alla annonser</h1>';
     
     $sql  = "SELECT * FROM `ad` ORDER BY `ad`.`ad_id` DESC";
     $stmt = $db->prepare($sql);
@@ -17,6 +17,11 @@
       $result = true;
       $ad_id = htmlspecialchars($row['ad_id']);
       $member_id = htmlspecialchars($row['member_id']);
+      $sqlName  = "SELECT * FROM `member` WHERE `member_id` = $member_id";
+      $stmtName = $db->prepare($sqlName);
+      $stmtName->execute();
+      $rowName = $stmtName->fetch(PDO::FETCH_ASSOC);
+      $name = htmlspecialchars($rowName['firstname'])." ".htmlspecialchars($rowName['surname']);
       $type = htmlspecialchars($row['type']);
       $rooms = htmlspecialchars($row['rooms']);
       $area = htmlspecialchars($row['area']);
@@ -54,12 +59,12 @@
       <div>
         <img src='../images/$image' alt='image'>
       </div>
-      <div class='product-info'>";
-      echo "
+      <div class='product-info'>
           $publishedText
           <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--delete'>Ta bort</button></a>
-          <h3>$address, $city</h3>
-          <p class=''>$municipality kommun</p>
+          <p><a href='member-ads.php?member_id=$member_id'>$member_id - $name</a></p>
+          <h3>$address</h3>
+          <p class=''>$city, $municipality kommun</p>
           <table>
             <td><p>$price kr</p></td>
             <td><p>$area m²</p></td>

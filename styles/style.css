@@ -141,7 +141,6 @@ a.login--admin {
 
 .ad {
   border: 1.5px solid #ff927a;
-  padding: 1rem;
 }
 
 .ad--admin {
@@ -288,6 +287,11 @@ button:hover {
 .form__feedback {
   color: #ff927a;
   margin-top: 0;
+}
+
+.adImg {
+  height: 300px;
+  width: auto;
 }
 
 .create__nav ul {

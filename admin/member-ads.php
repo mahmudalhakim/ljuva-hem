@@ -20,7 +20,7 @@
     $stmtName->execute();
     $rowName = $stmtName->fetch(PDO::FETCH_ASSOC);
     $name = htmlspecialchars($rowName['firstname'])." ".htmlspecialchars($rowName['surname']);
-    $email = htmlspecialchars($row['email']);
+    $email = htmlspecialchars($rowName['email']);
 
     echo "<h2>$name's annonser</h2>";
 
