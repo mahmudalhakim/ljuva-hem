@@ -25,9 +25,14 @@ require_once 'db.php';
     $municipality = htmlspecialchars($row['municipality']);
     $tagline = htmlspecialchars($row['tagline']);
     $description = htmlspecialchars($row['description']);
-    $images = htmlspecialchars($row['images']);
     $publication_date = htmlspecialchars($row['publication_date']);
     $published = htmlspecialchars($row['published']);
+
+    $sqlImg = "SELECT * FROM images WHERE `ad_id` = $ad_id";
+    $stmtImg = $db->prepare($sqlImg);
+    $stmtImg->execute();
+    $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);
+    $images = htmlspecialchars($rowImg['image_1']);
 
     $ad = array(
                     "ad_id" => $ad_id,

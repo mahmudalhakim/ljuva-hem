@@ -45,6 +45,9 @@
         <label for="price">Pris (kr)</label><br>
         <input type="number" class="form__input--create" name="price" id="price" placeholder="Pris...">
         <br><br>
+        <label for="rent">Avgift (kr/mån)</label><br>
+        <input type="number" class="form__input--create" name="rent" id="rent" placeholder="Avgift...">
+        <br><br>
         <label for="address">Gatuadress</label><br>
         <input type="text" class="form__input--create" name="address" placeholder="Gatuadress..." required>
         <br><br>

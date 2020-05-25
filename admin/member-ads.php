@@ -35,7 +35,6 @@
       $address = htmlspecialchars($row['address']);
       $city = htmlspecialchars($row['city']);
       $municipality = htmlspecialchars($row['municipality']);
-      $image = htmlspecialchars($row['images']);
       $type = htmlspecialchars($row['type']);
       switch ($type) {
         case 'flat':
@@ -60,6 +59,11 @@
       } else {
         $publishedText = "<a href='publish.php?ad_id=$ad_id&publish=no'><button class='form__reset_btn'>Avpublicera</button></a>";
       }
+      $sqlImg  = "SELECT `image_hero` FROM `images` WHERE `images`.`ad_id` LIKE $ad_id";
+      $stmtImg = $db->prepare($sqlImg);
+      $stmtImg->execute();
+      $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);
+      $image = htmlspecialchars($rowImg['image_hero']);
 
       echo "<div id='$ad_id' class='ad ad--admin'>
       <div>

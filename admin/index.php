@@ -17,11 +17,13 @@
       $result = true;
       $ad_id = htmlspecialchars($row['ad_id']);
       $member_id = htmlspecialchars($row['member_id']);
+      // get user info
       $sqlName  = "SELECT * FROM `member` WHERE `member_id` = $member_id";
       $stmtName = $db->prepare($sqlName);
       $stmtName->execute();
       $rowName = $stmtName->fetch(PDO::FETCH_ASSOC);
       $name = htmlspecialchars($rowName['firstname'])." ".htmlspecialchars($rowName['surname']);
+      // ads info
       $type = htmlspecialchars($row['type']);
       $rooms = htmlspecialchars($row['rooms']);
       $area = htmlspecialchars($row['area']);
@@ -29,7 +31,6 @@
       $address = htmlspecialchars($row['address']);
       $city = htmlspecialchars($row['city']);
       $municipality = htmlspecialchars($row['municipality']);
-      $image = htmlspecialchars($row['images']);
       $type = htmlspecialchars($row['type']);
       switch ($type) {
         case 'flat':
@@ -54,6 +55,12 @@
       } else {
         $publishedText = "<a href='publish.php?ad_id=$ad_id&publish=no'><button class='form__reset_btn'>Avpublicera</button></a>";
       }
+
+      $sqlImg  = "SELECT `image_hero` FROM `images` WHERE `images`.`ad_id` LIKE $ad_id";
+      $stmtImg = $db->prepare($sqlImg);
+      $stmtImg->execute();
+      $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);
+      $image = htmlspecialchars($rowImg['image_hero']);
 
       echo "<div id='$ad_id' class='ad ad--admin'>
       <div>

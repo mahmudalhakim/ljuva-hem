@@ -73,7 +73,6 @@ function handleAds(ads) {
       }
   })
 }
-console.log("faf")
 // show ads in DOM
 function showAds(ads) {
   let adSection = document.getElementById("adSection")
@@ -99,7 +98,6 @@ function showAds(ads) {
           typeText = 'Övrigt';
           break;
       }
-      console.log(ads[Object.keys(ads)[i]].ad_id)
       adSection.innerHTML +=
         `<div id="${Object.keys(ads)[i]}" class="product">
           <div>

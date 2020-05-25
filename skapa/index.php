@@ -5,6 +5,11 @@
 
   if (isset($_SESSION['loggedintoljuvahem']) && $_SESSION['loggedintoljuvahem'] == true) {
     $member_id = htmlspecialchars($_SESSION['member_id']);
+    $sqlName  = "SELECT `firstname` FROM `member` WHERE `member_id` = $member_id";
+    $stmtName = $db->prepare($sqlName);
+    $stmtName->execute();
+    $rowName = $stmtName->fetch(PDO::FETCH_ASSOC);
+    $name = htmlspecialchars($rowName['firstname']);
 
     echo '<input type="hidden" id="loginStatus" name="loginStatus" value="true">
 
@@ -19,8 +24,9 @@
 
       <section class="section__create">
         <h1>Hantera annonser</h1>
-        <a href="steg1.php"><button class="ad__button ad__button--active">Skapa ny annons</button></a>
-        <h2>Mina annonser</h2>';
+        <h2>Skapa annons</h2>
+        <a href="steg1.php"><button class="ad__button ad__button--active">Skapa annons</button></a>
+        <h2>'.$name.'s annonser</h2>';
     
     $sql  = "SELECT * FROM `ad` WHERE `member_id` = $member_id ORDER BY `ad`.`ad_id` DESC";
     $stmt = $db->prepare($sql);
@@ -29,7 +35,6 @@
     $result = false;
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       $result = true;
-
       $ad_id = htmlspecialchars($row['ad_id']);
       $type = htmlspecialchars($row['type']);
       $rooms = htmlspecialchars($row['rooms']);
@@ -38,7 +43,6 @@
       $address = htmlspecialchars($row['address']);
       $city = htmlspecialchars($row['city']);
       $municipality = htmlspecialchars($row['municipality']);
-      $image = htmlspecialchars($row['images']);
       $type = htmlspecialchars($row['type']);
       switch ($type) {
         case 'flat':
@@ -63,6 +67,12 @@
       } else {
         $publishedText = 'Publicerad';
       }
+
+      $sqlImg  = "SELECT `image_hero` FROM `images` WHERE `ad_id` = $ad_id";
+      $stmtImg = $db->prepare($sqlImg);
+      $stmtImg->execute();
+      $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);
+      $image = htmlspecialchars($rowImg['image_hero']);
 
       echo "<div id='$ad_id' class='ad'>
 
