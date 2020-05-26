@@ -10,10 +10,10 @@
             $_SESSION['loggedintoljuvahemadmin'] == true && 
             isset($_GET['member_id'])) {
     $member_id = htmlspecialchars($_GET['member_id']);
+    
     $sql  = "SELECT * FROM `ad` WHERE `member_id` = $member_id ORDER BY `ad`.`ad_id` DESC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-
 
     $sqlName  = "SELECT * FROM `member` WHERE `member_id` = $member_id";
     $stmtName = $db->prepare($sqlName);
