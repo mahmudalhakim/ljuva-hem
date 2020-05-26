@@ -40,6 +40,8 @@
       $rooms = htmlspecialchars($row['rooms']);
       $area = htmlspecialchars($row['area']);
       $price = htmlspecialchars($row['price']);
+      $rent = htmlspecialchars($row['rent']);
+      $tagline = htmlspecialchars($row['tagline']);
       $address = htmlspecialchars($row['address']);
       $city = htmlspecialchars($row['city']);
       $municipality = htmlspecialchars($row['municipality']);
@@ -75,23 +77,23 @@
       $image = htmlspecialchars($rowImg['image_hero']);
 
       echo "<div id='$ad_id' class='ad'>
-
-      <div>
-        <img src='../images/$image' alt='image'>
-      </div>";
+              <div>
+                <img src='../images/$image' alt='image'>
+              </div>";
       echo "<div class='product-info'>
-          <a href='ad-edit.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera text</button></a>
-          <a href='ad-edit-images.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera bilder</button></a>
-          <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Ta bort</button></a>
           <p>$publishedText</p>
           <h3>$address, $city</h3>
           <p class=''>$municipality kommun</p>
+          <p>$typeText</p>
           <table>
             <td><p>$price kr</p></td>
+            <td><p>$rent kr/mån</p></td>
             <td><p>$area m²</p></td>
             <td><p>$rooms rum</p></td>
-            <td><p>$typeText</p></td>
-          </table>
+          </table><br>
+          <a href='ad-edit.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera text</button></a>
+          <a href='ad-edit-images.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera bilder</button></a>
+          <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Ta bort</button></a>
         </div>
       </div>";
       }

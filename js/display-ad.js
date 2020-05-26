@@ -11,28 +11,35 @@ function showAds(ads) {
   adSection.innerHTML = ""
   if (ads.length > 0) {
     for (let i = 0; i < ads.length; i++) {
-      if( ads[Object.keys(ads)[i]].ad_id == ad_id){
-      let type = ads[Object.keys(ads)[i]].type
-      let typeText = ""
-      switch (type) {
-        case 'flat':
-          typeText = 'Lägenhet';
-          break;
-        case 'house':
-          typeText = 'Villa';
-          break;
-        case 'townhouse':
-          typeText = 'Radhus';
-          break;
-        case 'countryhouse':
-          typeText = 'Fritidshus';
-          break;
-        case 'other':
-          typeText = 'Övrigt';
-          break;
-      }
-      adSection.innerHTML = `
-          <img src="images/${ads[Object.keys(ads)[i]].image_hero}" class="adImg">
+      if (ads[Object.keys(ads)[i]].ad_id == ad_id) {
+        let type = ads[Object.keys(ads)[i]].type
+        let images = ads[Object.keys(ads)[i]].images
+        let typeText = ""
+        switch (type) {
+          case 'flat':
+            typeText = 'Lägenhet';
+            break;
+          case 'house':
+            typeText = 'Villa';
+            break;
+          case 'townhouse':
+            typeText = 'Radhus';
+            break;
+          case 'countryhouse':
+            typeText = 'Fritidshus';
+            break;
+          case 'other':
+            typeText = 'Övrigt';
+            break;
+        }
+        adSection.innerHTML = `<img src="images/${ads[Object.keys(ads)[i]].image_hero}" class="adImg">`
+        for (let j = 0; j < images.length; j++) {
+          const image = images[j];
+          if( image !== '' && image !== ads[Object.keys(ads)[i]].image_hero ){
+            adSection.innerHTML += `<img src="images/${ads[Object.keys(ads)[i]].images[j]}" class="adImg">`
+          }
+        }
+        adSection.innerHTML += `
           <div class="product-info">
             <p class="city">${typeText.toUpperCase()}</p>
             <h3>${ads[Object.keys(ads)[i]].address}</h3>
