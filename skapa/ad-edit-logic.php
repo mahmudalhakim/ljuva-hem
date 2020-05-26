@@ -13,7 +13,7 @@
     $tagline = htmlspecialchars($_POST['tagline']);
     $description = htmlspecialchars($_POST['description']);
             
-    $sql = "UPDATE `ad` SET 
+    $sql = "UPDATE `ljuvahem-ad` SET 
     `type`= '$type',
     `rooms`= '$rooms',
     `area`= '$area',

@@ -8,12 +8,12 @@ $ad_id = htmlentities($_GET['ad_id']);
 $publish = htmlentities($_GET['publish']);
 print_r($_GET);
 if($publish == "yes"){
-  $sql = "UPDATE ad SET 
+  $sql = "UPDATE `ljuvahem-ad` SET 
   published = '$publish', 
   publication_date = CURRENT_TIMESTAMP
   WHERE ad_id = $ad_id";
 } else {
-  $sql = "UPDATE ad SET 
+  $sql = "UPDATE `ljuvahem-ad` SET 
   published = '$publish'
   WHERE ad_id = $ad_id";
 }

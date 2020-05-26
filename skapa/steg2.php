@@ -5,7 +5,7 @@
 
   if (isset($_SESSION['loggedintoljuvahem']) && $_SESSION['loggedintoljuvahem'] == true) {
 
-  $sql ="SELECT * FROM ad ORDER BY ad_id DESC LIMIT 1";
+  $sql ="SELECT * FROM `ljuvahem-ad` ORDER BY ad_id DESC LIMIT 1";
   $stmt = $db->prepare($sql);
   $stmt->execute();
   $row = $stmt->fetch(PDO::FETCH_ASSOC);

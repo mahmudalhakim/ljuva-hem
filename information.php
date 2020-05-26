@@ -6,7 +6,7 @@ require_once 'db.php';
  * different sql-ads depending on which link pushed
 **************************************** */
 
-  $sql = "SELECT * FROM ad";
+  $sql = "SELECT * FROM `ljuvahem-ad`";
   $stmt = $db->prepare($sql);
   $stmt->execute();
 
@@ -28,7 +28,7 @@ require_once 'db.php';
     $publication_date = htmlspecialchars($row['publication_date']);
     $published = htmlspecialchars($row['published']);
 
-    $sqlImg = "SELECT * FROM images WHERE `ad_id` = $ad_id";
+    $sqlImg = "SELECT * FROM `ljuvahem-images` WHERE `ad_id` = $ad_id";
     $stmtImg = $db->prepare($sqlImg);
     $stmtImg->execute();
     $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);

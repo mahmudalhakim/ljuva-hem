@@ -11,7 +11,7 @@
     $password = password_hash($passwordEntered, PASSWORD_DEFAULT);
 
     // check if member is allready registered
-    $sqlCheckForMember  = "SELECT `email` FROM `member` WHERE `email` LIKE '$email'";
+    $sqlCheckForMember  = "SELECT `email` FROM `ljuvahem-member` WHERE `email` LIKE '$email'";
     $stmtCheckForMember = $db->prepare($sqlCheckForMember);
     $stmtCheckForMember->execute();
     // variable only changes if the member allready exist
@@ -21,7 +21,7 @@
     }
     // if new email create new member
     if(!$doesMemberExist){
-      $sql  = " INSERT INTO `member` (`member_id`, `firstname`, `surname`, `email`, `password`) 
+      $sql  = " INSERT INTO `ljuvahem-member` (`member_id`, `firstname`, `surname`, `email`, `password`) 
                 VALUES (NULL, '$firstname', '$surname', '$email', '$password')";
       $stmt = $db->prepare($sql);
       $stmt->execute();

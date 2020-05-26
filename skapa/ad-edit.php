@@ -5,7 +5,7 @@
 
   if (isset($_SESSION['loggedintoljuvahem']) && $_SESSION['loggedintoljuvahem'] == true) {
     $member_id = htmlspecialchars($_SESSION['member_id']);
-    $sqlName  = "SELECT `firstname` FROM `member` WHERE `member_id` = $member_id";
+    $sqlName  = "SELECT `firstname` FROM `ljuvahem-member` WHERE `member_id` = $member_id";
     $stmtName = $db->prepare($sqlName);
     $stmtName->execute();
     $rowName = $stmtName->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@
     <section class="section__create">
     <h1>Redigera annons</h1>';
   $ad_id = htmlspecialchars($_GET['ad_id']);
-  $sql  = "SELECT * FROM `ad` WHERE `ad_id` = $ad_id";
+  $sql  = "SELECT * FROM `ljuvahem-ad` WHERE `ad_id` = $ad_id";
   $stmt = $db->prepare($sql);
   $stmt->execute();
   $row = $stmt->fetch(PDO::FETCH_ASSOC);

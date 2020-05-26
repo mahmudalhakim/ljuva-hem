@@ -5,7 +5,7 @@
     $tagline = htmlspecialchars($_POST['tagline']);
     $description = htmlspecialchars($_POST['description']);
             
-    $sql = "UPDATE `ad` SET `tagline` = '$tagline', `description` = '$description' WHERE `ad`.`ad_id` = $ad_id"; 
+    $sql = "UPDATE `ljuvahem-ad` SET `tagline` = '$tagline', `description` = '$description' WHERE `ljuvahem-ad`.`ad_id` = $ad_id"; 
     $stmt = $db->prepare($sql);
     $stmt->execute();
 

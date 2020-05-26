@@ -13,7 +13,7 @@ require_once '../db.php';
     session_start();
     $member_id = htmlspecialchars($_SESSION['member_id']);
             
-    $sql  = " INSERT INTO `ad` (`ad_id`, `member_id`, `type`, `rooms`, `area`, `price`, `rent`, `address`, `city`, `municipality`, `published`) 
+    $sql  = " INSERT INTO `ljuvahem-ad` (`ad_id`, `member_id`, `type`, `rooms`, `area`, `price`, `rent`, `address`, `city`, `municipality`, `published`) 
               VALUES (NULL, '$member_id', '$type', '$rooms', '$area', '$price', '$rent', '$address', '$city', '$municipality', 'no')";
     $stmt = $db->prepare($sql);
     $stmt->execute();

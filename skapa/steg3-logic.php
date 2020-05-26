@@ -8,7 +8,7 @@ require_once '../db.php';
 if (isset($_GET['id'])):
   $ad_id = htmlspecialchars($_GET['id']);
   // create a row in images table
-  $sqlCreate = "INSERT INTO `images` (`ad_id`, `image_hero`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`, `image_6`, `image_7`, `image_8`, `image_9`, `image_10`) 
+  $sqlCreate = "INSERT INTO `ljuvahem-images` (`ad_id`, `image_hero`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`, `image_6`, `image_7`, `image_8`, `image_9`, `image_10`) 
   VALUES ('$ad_id', '', '', '', '', '', '', '', '', '', '', '')";
   $stmtCreate = $db->prepare($sqlCreate);
   $stmtCreate->execute();
@@ -22,7 +22,7 @@ if (isset($_GET['id'])):
   }
   // if no image, upload placeholder else upload selected images
   if(!$_FILES["image"]['name'][0]){
-    $sql = "UPDATE `images` SET `image_hero` = 'placeholder.png' WHERE `images`.`ad_id` = $ad_id"; 
+    $sql = "UPDATE `ljuvahem-images` SET `image_hero` = 'placeholder.png' WHERE `ljuvahem-images`.`ad_id` = $ad_id"; 
     $stmt = $db->prepare($sql);
     $stmt->execute();
   } else {
@@ -42,12 +42,12 @@ if (isset($_GET['id'])):
 
       // save images names in db
       $imageNumber = "image_".(1+$i);
-      $sql = "UPDATE `images` SET `$imageNumber` = '$NewImageName' WHERE `images`.`ad_id` = $ad_id"; 
+      $sql = "UPDATE `ljuvahem-images` SET `$imageNumber` = '$NewImageName' WHERE `ljuvahem-images`.`ad_id` = $ad_id"; 
       $stmt = $db->prepare($sql);
       $stmt->execute();
       // set first image to be hero image
       if($i == 0){
-        $sql = "UPDATE `images` SET `image_hero` = '$NewImageName' WHERE `images`.`ad_id` = $ad_id"; 
+        $sql = "UPDATE `ljuvahem-images` SET `image_hero` = '$NewImageName' WHERE `ljuvahem-images`.`ad_id` = $ad_id"; 
         $stmt = $db->prepare($sql);
         $stmt->execute();
       }

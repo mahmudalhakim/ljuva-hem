@@ -5,7 +5,7 @@
 
   if (isset($_SESSION['loggedintoljuvahem']) && $_SESSION['loggedintoljuvahem'] == true) {
     $member_id = htmlspecialchars($_SESSION['member_id']);
-    $sqlName  = "SELECT `firstname` FROM `member` WHERE `member_id` = $member_id";
+    $sqlName  = "SELECT `firstname` FROM `ljuvahem-member` WHERE `member_id` = $member_id";
     $stmtName = $db->prepare($sqlName);
     $stmtName->execute();
     $rowName = $stmtName->fetch(PDO::FETCH_ASSOC);
@@ -28,7 +28,7 @@
         <a href="steg1.php"><button class="ad__button ad__button--active">Skapa annons</button></a>
         <h2>'.$name.'s annonser</h2>';
     
-    $sql  = "SELECT * FROM `ad` WHERE `member_id` = $member_id ORDER BY `ad`.`ad_id` DESC";
+    $sql  = "SELECT * FROM `ljuvahem-ad` WHERE `member_id` = $member_id ORDER BY `ljuvahem-ad`.`ad_id` DESC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
@@ -70,7 +70,7 @@
         $publishedText = 'Publicerad';
       }
 
-      $sqlImg  = "SELECT `image_hero` FROM `images` WHERE `ad_id` = $ad_id";
+      $sqlImg  = "SELECT `image_hero` FROM `ljuvahem-images` WHERE `ad_id` = $ad_id";
       $stmtImg = $db->prepare($sqlImg);
       $stmtImg->execute();
       $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);

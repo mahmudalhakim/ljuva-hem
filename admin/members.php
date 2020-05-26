@@ -16,7 +16,7 @@
           <th></th>
         </thead>";
     
-    $sql  = "SELECT * FROM `member` ORDER BY `member`.`member_id`";
+    $sql  = "SELECT * FROM `ljuvahem-member` ORDER BY `ljuvahem-member`.`member_id`";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 

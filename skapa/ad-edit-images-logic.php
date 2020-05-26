@@ -32,7 +32,7 @@ if ( isset($_FILES['image']) && isset($_POST['left']) && isset($_POST['ad_id']) 
     move_uploaded_file($_FILES["image"]["tmp_name"][$i],$directory."/".$NewImageName );
 
     // save images names in db on first empty column
-    $sqlImages = "SELECT * FROM `images` WHERE `images`.`ad_id` = $ad_id"; 
+    $sqlImages = "SELECT * FROM `ljuvahem-images` WHERE `ljuvahem-images`.`ad_id` = $ad_id"; 
     $stmtImages = $db->prepare($sqlImages);
     $stmtImages->execute();
     $rowImages = $stmtImages->fetch(PDO::FETCH_ASSOC);
@@ -43,7 +43,7 @@ if ( isset($_FILES['image']) && isset($_POST['left']) && isset($_POST['ad_id']) 
       } 
     }
 
-    $sql = "UPDATE `images` SET `$image` = '$NewImageName' WHERE `images`.`ad_id` = $ad_id"; 
+    $sql = "UPDATE `ljuvahem-images` SET `$image` = '$NewImageName' WHERE `ljuvahem-images`.`ad_id` = $ad_id"; 
     $stmt = $db->prepare($sql);
     $stmt->execute();
   }

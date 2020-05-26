@@ -3,7 +3,7 @@ require_once 'db.php';
 if( isset($_POST['email']) && isset($_POST['password'])){
   $email = htmlspecialchars($_POST['email']);
   // check if member exists
-  $sqlCheckForMember  = "SELECT `email`,`password`,`member_id` FROM `member` WHERE `email` LIKE '$email'";
+  $sqlCheckForMember  = "SELECT `email`,`password`,`member_id` FROM `ljuvahem-member` WHERE `email` LIKE '$email'";
   $stmtCheckForMember = $db->prepare($sqlCheckForMember);
   $stmtCheckForMember->execute();
   // variable only changes if the member allready exist

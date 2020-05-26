@@ -6,7 +6,7 @@
   if (isset($_SESSION['loggedintoljuvahem']) && $_SESSION['loggedintoljuvahem'] == true) {
 
     $ad_id = htmlspecialchars($_GET['ad_id']);
-    $sql  = "SELECT * FROM `images` WHERE `ad_id` = $ad_id";
+    $sql  = "SELECT * FROM `ljuvahem-images` WHERE `ad_id` = $ad_id";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);

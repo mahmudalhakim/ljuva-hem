@@ -8,7 +8,7 @@ if( isset($_GET['ad_id']) && isset($_GET['image']) ){
   $ad_id = htmlspecialchars($_GET['ad_id']); 
   $image = htmlspecialchars($_GET['image']); 
 
-  $sqlImg  = "UPDATE `images` SET `$image` = '' WHERE `images`.`ad_id` = $ad_id"; 
+  $sqlImg  = "UPDATE `ljuvahem-images` SET `$image` = '' WHERE `ljuvahem-images`.`ad_id` = $ad_id"; 
   $stmtImg = $db->prepare($sqlImg);
   $stmtImg->execute();
 }

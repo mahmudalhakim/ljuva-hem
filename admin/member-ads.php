@@ -11,11 +11,11 @@
             isset($_GET['member_id'])) {
     $member_id = htmlspecialchars($_GET['member_id']);
     
-    $sql  = "SELECT * FROM `ad` WHERE `member_id` = $member_id ORDER BY `ad`.`ad_id` DESC";
+    $sql  = "SELECT * FROM `ljuvahem-ad` WHERE `member_id` = $member_id ORDER BY `ljuvahem-ad`.`ad_id` DESC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
-    $sqlName  = "SELECT * FROM `member` WHERE `member_id` = $member_id";
+    $sqlName  = "SELECT * FROM `ljuvahem-member` WHERE `member_id` = $member_id";
     $stmtName = $db->prepare($sqlName);
     $stmtName->execute();
     $rowName = $stmtName->fetch(PDO::FETCH_ASSOC);
@@ -59,7 +59,7 @@
       } else {
         $publishedText = "<a href='publish.php?ad_id=$ad_id&publish=no'><button class='form__reset_btn'>Avpublicera</button></a>";
       }
-      $sqlImg  = "SELECT `image_hero` FROM `images` WHERE `images`.`ad_id` LIKE $ad_id";
+      $sqlImg  = "SELECT `image_hero` FROM `ljuvahem-images` WHERE `ljuvahem-images`.`ad_id` LIKE $ad_id";
       $stmtImg = $db->prepare($sqlImg);
       $stmtImg->execute();
       $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);
