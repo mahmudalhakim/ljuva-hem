@@ -101,7 +101,7 @@ function showAds(ads) {
       adSection.innerHTML +=
         `<div id="${Object.keys(ads)[i]}" class="product">
           <div>
-            <a href="ad.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}"><img src="images/${ads[Object.keys(ads)[i]].images}"></a>
+            <a href="ad.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}"><img src="images/${ads[Object.keys(ads)[i]].image_hero}"></a>
           </div>
           <div class="product-info">
             <p class="city">${typeText.toUpperCase()}</p>

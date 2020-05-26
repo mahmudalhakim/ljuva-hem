@@ -32,7 +32,7 @@ require_once 'db.php';
     $stmtImg = $db->prepare($sqlImg);
     $stmtImg->execute();
     $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);
-    $images = htmlspecialchars($rowImg['image_1']);
+    $image_hero = htmlspecialchars($rowImg['image_hero']);
 
     $ad = array(
                     "ad_id" => $ad_id,
@@ -47,7 +47,7 @@ require_once 'db.php';
                     "municipality" => $municipality,
                     "tagline" => $tagline,
                     "description" => $description,
-                    "images" => $images,
+                    "image_hero" => $image_hero,
                     "publication_date" => $publication_date,
                     "published" => $published
                   );

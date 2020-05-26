@@ -32,7 +32,7 @@ function showAds(ads) {
           break;
       }
       adSection.innerHTML = `
-          <img src="images/${ads[Object.keys(ads)[i]].images}" class="adImg">
+          <img src="images/${ads[Object.keys(ads)[i]].image_hero}" class="adImg">
           <div class="product-info">
             <p class="city">${typeText.toUpperCase()}</p>
             <h3>${ads[Object.keys(ads)[i]].address}</h3>

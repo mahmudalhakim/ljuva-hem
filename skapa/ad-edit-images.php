@@ -22,28 +22,17 @@
     <section class="section__create">
     <h1>Redigera bilder</h1>';
 
-    $image_0 = htmlspecialchars($row['image_hero']);
-    $image_1 = htmlspecialchars($row['image_1']);
-    $image_2 = htmlspecialchars($row['image_2']);
-    $image_3 = htmlspecialchars($row['image_3']);
-    $image_4 = htmlspecialchars($row['image_4']);
-    $image_5 = htmlspecialchars($row['image_5']);
-    $image_6 = htmlspecialchars($row['image_6']);
-    $image_7 = htmlspecialchars($row['image_7']);
-    $image_8 = htmlspecialchars($row['image_8']);
-    $image_9 = htmlspecialchars($row['image_9']);
-    $image_10 = htmlspecialchars($row['image_10']);
-    $heroAddress = $image_0;
+    $heroAddress = htmlspecialchars($row['image_hero']);
 
     $numberOfImages = 0;
     for ($i=0; $i < count($row)-1; $i++){
       if($i == 0){
         $image = "image_hero";
         $numberOfImages++;
-        echo "<p>Primärbild</p>";
         echo '<img src="../images/'.htmlspecialchars($row[$image]).'" 
         alt="'.$ad_id.'-'.$i.'" 
-        class="adImg adImg--hero"><br><br><br>';
+        class="adImg adImg--hero">';
+        echo "<p>Byt till annan primärbild för att ta bort</p><br><br>";
       } else {
         $image = 'image_'.$i;
          if( strlen($row[$image]) > 0 && htmlspecialchars($row[$image]) != $heroAddress ){
@@ -62,11 +51,24 @@
         } 
       }
     }
-    echo $numberOfImages."<br>";
+    if($numberOfImages < 10){
+      $left = 10 - $numberOfImages;
+      echo '<form action="ad-edit-images-add.php" enctype="multipart/form-data" method="post" class="form__sell">
+        <h3>Lägg till bilder</h3>
+        <p>Antal bilder: '.$numberOfImages.'/10</p>
+        <input type="hidden" id="ad_id" name="ad_id" value="'.$ad_id.'"> 
+        <input type="hidden" id="left" name="left" value="'.$left.'"> 
+        <input type="file" id="image" name="image[]" id="fileToUpload" multiple>
+        <br><br>
+        <button type="submit" class="form__submit_btn--create">Lägg till</button>
+      </form>';
+    } else {
+      echo "<p>Annonsen har max antal bilder</p>";
+    }
     echo '</section>';
 
   } else {
-    echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
+    echo '
       <nav class="nav__login">
         <ul>
           <li><a href="../login.php" id="login">Logga in</a></li>
