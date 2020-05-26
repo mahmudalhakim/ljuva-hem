@@ -23,14 +23,12 @@
         <li class="create__nav--step"><h3>4 - Klart</h3></li>
       </ul>
     </nav>
-    <form action="steg3-logic.php?id=<?php echo $_GET['ad_id']; ?>" enctype="multipart/form-data" method="post" class="form__sell">
+    <form action="steg3-logic.php?id=<?php echo $_GET['id']; ?>" enctype="multipart/form-data" method="post" class="form__sell">
       <h3>3 - Bilder</h3>
       <label for="img">Välj bilder:</label><br>
       <input type="file" id="image" name="image[]" id="fileToUpload" multiple>
-      <br>
-      <button>Lägg till bild</button>
       <br><br>
-      <button type="submit" class="form__submit_btn--create">Till steg - 4</button>
+      <button type="submit" class="form__submit_btn--create">Spara - Till steg - 4</button>
     </form>
     <!-- '; -->
   <!-- } else {

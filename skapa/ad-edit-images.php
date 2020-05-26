@@ -53,7 +53,7 @@
     }
     if($numberOfImages < 10){
       $left = 10 - $numberOfImages;
-      echo '<form action="ad-edit-images-add.php" enctype="multipart/form-data" method="post" class="form__sell">
+      echo '<form action="ad-edit-images-logic.php" enctype="multipart/form-data" method="post" class="form__sell">
         <h3>Lägg till bilder</h3>
         <p>Antal bilder: '.$numberOfImages.'/10</p>
         <input type="hidden" id="ad_id" name="ad_id" value="'.$ad_id.'"> 

@@ -94,18 +94,6 @@
           </table>
         </div>
       </div>";
-      // echo "
-      // <table id='$ad_id'>
-      //   <tr>
-      //     <td><p>$address</p></td>
-      //     <td><p>$city</p></td>
-      //     <td><p>$municipality</p></td>
-      //     <td><p>$area m²</p></td>
-      //     <td><p>$rooms rum</p></td>
-      //     <td><p>$price kr</p></td>
-      //     <td><p>$price kr</p></td>
-      //   </tr>
-      // </table>";
       }
       if(!$result){
         echo "<p>Det finns inga annonser att visa</p>";
