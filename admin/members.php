@@ -31,7 +31,7 @@
                 <td><p>$member_id</p></td>
                 <td><p>$email</p></td>
                 <td><p>$name</p></td>
-                <td><a href='member-ads.php?member_id=$member_id'>Se annonser</a></td>
+                <td><a href='show-all.php?member_id=$member_id'>Se annonser</a></td>
               </tr>";
       }
     }

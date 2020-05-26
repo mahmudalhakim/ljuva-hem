@@ -11,7 +11,7 @@ if(isset($_GET['ad_id'])){
   $stmtImg = $db->prepare($sqlImg);
   $stmtImg->execute();
   
-  $sql  = "DELETE FROM ad WHERE ad_id = $ad_id";
+  $sql  = "DELETE FROM `ljuvahem-ad` WHERE ad_id = $ad_id";
   $stmt = $db->prepare($sql);
   $stmt->execute();
 

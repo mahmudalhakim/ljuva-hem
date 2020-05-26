@@ -69,7 +69,7 @@
       <div class='product-info'>
           $publishedText
           <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--delete'>Ta bort</button></a>
-          <p><a href='member-ads.php?member_id=$member_id'>$member_id - $name</a></p>
+          <p><a href='show-all.php?member_id=$member_id'>$member_id - $name</a></p>
           <h3>$address</h3>
           <p class=''>$city, $municipality kommun</p>
           <table>

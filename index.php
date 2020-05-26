@@ -61,7 +61,7 @@
 <section id="adSection"></section> 
 
 <!-- <script src="js/display_products.js"></script> -->
-<script src="js/display-ads.js"></script>
+<script src="js/display-all.js"></script>
 <script src="js/set-up-form.js"></script>
 
 <?php
