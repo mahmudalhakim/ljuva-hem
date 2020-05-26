@@ -1,3 +1,7 @@
+<?php 
+  require_once '../db.php';
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +26,6 @@
   </nav>
 
   <?php
-require_once '../db.php';
-session_start();
   if (isset($_SESSION['loggedintoljuvahemadmin']) && $_SESSION['loggedintoljuvahemadmin'] == true) {
     echo '
     <nav class="nav__login">
