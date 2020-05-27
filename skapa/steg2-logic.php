@@ -1,7 +1,7 @@
 <?php
   require_once '../db.php';
-  if(isset($_GET['ad_id']) && isset($_POST)){
-    $ad_id = htmlspecialchars($_GET['ad_id']);
+  if(isset($_POST['ad_id']) && isset($_POST)){
+    $ad_id = htmlspecialchars($_POST['ad_id']);
     $tagline = htmlspecialchars($_POST['tagline']);
     $description = htmlspecialchars($_POST['description']);
             
@@ -9,7 +9,7 @@
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
-    header("Location:steg3.php?id=$ad_id");
+    header("Location:steg3.php?ad_id=$ad_id");
   } else {
     echo "Hoppsan, nu blev det nått fel!<br><a href='index.php'>Tillbaka hem</a>";
   } 

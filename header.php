@@ -34,7 +34,7 @@ session_start();
     </header>
     <main>';
     } else {
-      echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
+      echo '
       <nav class="nav__login">
         <ul>
           <li><a href="login.php" id="login">Logga in</a></li>

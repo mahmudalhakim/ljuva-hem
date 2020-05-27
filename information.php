@@ -45,7 +45,6 @@ require_once 'db.php';
     $image_10 = htmlspecialchars($rowImg['image_10']);
     $images = array($image_1, $image_2, $image_3, $image_4, $image_5, $image_6, $image_7, $image_8, $image_9, $image_10);
 
-
     $ad = array(
                     "ad_id" => $ad_id,
                     "member_id" => $member_id,

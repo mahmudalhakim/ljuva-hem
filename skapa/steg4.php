@@ -29,7 +29,7 @@
       <a href="index.php"><button class="form__submit_btn--create">Se mina annonser</button></a>
     </div>';
   } else {
-    echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
+    echo '
     <nav class="nav__login">
       <ul>
         <li><a href="../login.php" id="login" class="nav__link--sell">Logga in</a></li>

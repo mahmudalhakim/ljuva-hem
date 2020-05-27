@@ -24,8 +24,9 @@
         <li class="create__nav--step"><h3>4 - Klart</h3></li>
       </ul>
     </nav>
-      <form action="steg1-logic.php" class="form__sell" method="post">
+      <form action="steg1-logic.php" name="formCreate" class="form__sell" method="post" onsubmit="return validateForm()">
         <h3>1 - Information om bostad</h3>
+
         <label for="type">Bostadstyp</label><br>
         <select class="form__input--create" name="type" id="type">
           <option value="other">Övrigt</option>
@@ -34,35 +35,42 @@
           <option value="townhouse">Radhus</option>
           <option value="countryhouse">Fritidshus</option>
         </select><br><br>
+
         <label for="rooms">Antal rum</label><br>
-        <select class="form__input--create" name="rooms" id="rooms">
-          <option value="0">0</option>
-        </select>
-        <br><br>
+        <input type="text" class="form__input--create" name="rooms" id="rooms" placeholder="Antal rum..." required>
+        <p id="roomsFeedback" class="form__feedback"></p>
+
         <label for="area">Boarea (m²)</label><br>
-        <input type="text" class="form__input--create" name="area" id="area" placeholder="Boarea...">
-        <br><br>
+        <input type="text" class="form__input--create" name="area" id="area" placeholder="Boarea..." required>
+        <p id="areaFeedback" class="form__feedback"></p>
+
         <label for="price">Pris (kr)</label><br>
-        <input type="number" class="form__input--create" name="price" id="price" placeholder="Pris...">
-        <br><br>
+        <input type="number" class="form__input--create" name="price" id="price" placeholder="Pris..." required>
+        <p id="priceFeedback" class="form__feedback"></p>
+
         <label for="rent">Avgift (kr/mån)</label><br>
-        <input type="number" class="form__input--create" name="rent" id="rent" placeholder="Avgift...">
-        <br><br>
+        <input type="number" class="form__input--create" name="rent" id="rent" placeholder="Avgift..." required>
+        <p id="rentFeedback" class="form__feedback"></p>
+
         <label for="address">Gatuadress</label><br>
         <input type="text" class="form__input--create" name="address" placeholder="Gatuadress..." required>
-        <br><br>
+        <p id="addressFeedback" class="form__feedback"></p>
+
         <label for="city">Stad</label><br>
         <input type="text" class="form__input--create" name="city" placeholder="Stad..." required>
-        <br><br>
+        <p id="cityFeedback" class="form__feedback"></p>
+
         <label for="municipality">Kommun</label><br>
         <select class="form__input--create" name="municipality" id="municipality" required>
           <option value="unknown">Kommun</option>
         </select>
-        <br><br><br>
+        <p id="municipalityFeedback" class="form__feedback"></p>
+
+        <br>
         <button type="submit" class="form__submit_btn--create">Till steg - 2</button>
       </form>';
 } else {
-  echo '<input type="hidden" id="loginStatus" name="loginStatus" value="false">
+  echo '
   <nav class="nav__login">
     <ul>
       <li><a href="../login.php" id="login" class="nav__link--sell">Logga in</a></li>
@@ -82,6 +90,7 @@
 
 <script src="../js/set-up-form.js"></script>
 <script src="../js/select-municipalities.js"></script>
+<script src="../js/validate-info.js"></script>
 
 <?php
   require_once 'footer.php';
