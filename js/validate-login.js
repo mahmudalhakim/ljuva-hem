@@ -38,7 +38,7 @@ function checkLength(formName, inputName, feedbackId){
 function checkEmail(formName, inputName, feedbackId){
   // check for 
   let input = document.forms[formName][inputName].value;
-  let onlyLetters = /^[a-zA-Z\.._-0123456789@]*$/.test(input);
+  let onlyLetters = /^[a-zA-Z\.-0123456789@]*$/.test(input);
   let includesAt = input.includes('@');
   let includesDot = input.includes('.');
   if (onlyLetters == false || includesAt == false || includesDot == false) {
@@ -52,7 +52,7 @@ function checkEmail(formName, inputName, feedbackId){
 function checkPassword(formName, inputName, feedbackId){
   // check for allowed characters & length
   let input = document.forms[formName][inputName].value;
-  let allowedCharacters = /^[a-zA-Z-_ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789!@#$%^&*]*$/.test(input);
+  let allowedCharacters = /^[a-zA-Z-_ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789!?@#$%^&*]*$/.test(input);
   if (allowedCharacters == false) {
     document.getElementById(feedbackId).innerHTML = "Kan endast bestå av bokstäver, siffror eller !@#$%^&*-_";
     return false;

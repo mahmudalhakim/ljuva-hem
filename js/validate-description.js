@@ -38,7 +38,7 @@ function validateForm(){
 function checkLetters(formName, inputName, feedbackId){
   // check for latin letters
   let input = document.forms[formName][inputName].value;
-  let onlyLetters = /^[a-zA-Z\-[%&,_@#/?!'"\. ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789]*$/.test(input);
+  let onlyLetters = /^[a-zA-Z-_ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789!?@#$%^&*]*$/.test(input);
   if (onlyLetters == false) {
     document.getElementById(feedbackId).innerHTML = "Bara de vanligaste tecknen tillåtna";
     return false;
