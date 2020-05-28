@@ -11,20 +11,20 @@ function handleAds(ads) {
   const rentSelect = document.getElementById("rent")
   const municipalitySelect = document.getElementById("municipality")
   const searchInput = document.getElementById("inputAddress")
-  // FORCE CLICK!
-  // searchInput.addEventListener("keyup", function(event) {
-  //   if (event.keyCode === 13) {
-  //     event.preventDefault();
-  //     submitBtn.click();
-  //   }
-  // });
+  // don't submit form on enter, force "click" submit button instead
+  searchInput.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      submitBtn.click();
+      return false;
+    }
+  });
   // check user input on submit
   submitBtn.addEventListener('click', function filterAds(event) {
     event.preventDefault()
     // onlys show published ads
     let publishedAds = ads.filter(ad => ad.published == "yes")
     // check input from user if ok --> filter, otherwise --> feedback
-
     let input = searchInput.value
     let onlyLetters = /^[a-zA-Z- ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789]*$/.test(input);
     document.getElementById("inputFeedback").innerHTML = "";
@@ -46,7 +46,7 @@ function handleAds(ads) {
       if(municipalitySelect.value !== "0"){
         filteredByMunicipality = filteredByRent.filter(ad => ad.municipality.toLowerCase() == municipalitySelect.value.toLowerCase())
       }
-      
+
       // filter by which choice buttons that are checked
       let btnTypes = document.querySelectorAll('.form__button--active')
       let filteredByTypes
@@ -129,7 +129,6 @@ function showAds(ads) {
               <td><p>${parseInt(ads[Object.keys(ads)[i]].rent).toLocaleString().replace(',', ' ').replace(',', ' ')} kr</p></td>
             </tr>
             </table>
-            <a href="show-one.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}">Läs mer</a>
           </div>
         </div>`
     }
