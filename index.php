@@ -15,6 +15,7 @@
       <button class="form__button form__button--choice" id="other">Övrigt</button><br><br>
       <div id="more-options">
         <table>
+
           <thead>
             <th>Minst antal rum</th>
             <th>Boarea</th>
@@ -31,6 +32,7 @@
               </select>
             </td>
           </tr>
+
           <thead>
             <th><br>Högst pris</th>
             <th><br>Högst avgift</th>
@@ -47,10 +49,21 @@
               </select>
             </td>
           </tr>
+
+          <thead>
+            <th><br>Kommun</th>
+          </thead>
+          <tr>
+            <td>
+              <select name="" id="municipality">
+                <option value="0">Alla</option>
+              </select>
+            </td>
+          </tr>
+
         </table>
       </div>
     <br>
-    <!-- <button type="submit" class="form__submit_btn">Hitta bostäder till salu</button> -->
     <button class="form__submit_btn">Hitta bostäder till salu</button>
     <button class="form__reset_btn">Nollställ</button>  
   </form>  
@@ -60,9 +73,9 @@
 
 <section id="adSection"></section> 
 
-<!-- <script src="js/display_products.js"></script> -->
 <script src="js/display-all.js"></script>
 <script src="js/set-up-form.js"></script>
+<script src="js/municipalities.js"></script>
 
 <?php
   require_once 'footer.php';

@@ -9,6 +9,7 @@ function handleAds(ads) {
   const areaSelect = document.getElementById("area")
   const priceSelect = document.getElementById("price")
   const rentSelect = document.getElementById("rent")
+  const municipalitySelect = document.getElementById("municipality")
   const searchInput = document.getElementById("inputAddress")
   // FORCE CLICK!
   // searchInput.addEventListener("keyup", function(event) {
@@ -41,27 +42,32 @@ function handleAds(ads) {
       let filteredByArea = filteredByRooms.filter(ad => ad.area >= parseFloat(areaSelect.value))
       let filteredByPrice = filteredByArea.filter(ad => ad.price <= parseFloat(priceSelect.value))
       let filteredByRent = filteredByPrice.filter(ad => ad.rent <= parseFloat(rentSelect.value))
+      let filteredByMunicipality = filteredByRent
+      if(municipalitySelect.value !== "0"){
+        filteredByMunicipality = filteredByRent.filter(ad => ad.municipality.toLowerCase() == municipalitySelect.value.toLowerCase())
+      }
+      
       // filter by which choice buttons that are checked
       let btnTypes = document.querySelectorAll('.form__button--active')
       let filteredByTypes
       // either show all ads or only selected type of ads
       if (btnTypes[0].id == "all-btn" || btnTypes.length > 4) {
-        filteredByTypes = filteredByRent
+        filteredByTypes = filteredByMunicipality
       } else {
         switch (btnTypes.length) {
-          case 1: filteredByTypes = filteredByRent.filter(ad =>
+          case 1: filteredByTypes = filteredByMunicipality.filter(ad =>
             ad.type == btnTypes[0].id)
             break;
-          case 2: filteredByTypes = filteredByRent.filter(ad =>
+          case 2: filteredByTypes = filteredByMunicipality.filter(ad =>
             ad.type == btnTypes[0].id ||
             ad.type == btnTypes[1].id)
             break;
-          case 3: filteredByTypes = filteredByRent.filter(ad =>
+          case 3: filteredByTypes = filteredByMunicipality.filter(ad =>
             ad.type == btnTypes[0].id ||
             ad.type == btnTypes[1].id ||
             ad.type == btnTypes[2].id)
             break;
-          case 4: filteredByTypes = filteredByRent.filter(ad =>
+          case 4: filteredByTypes = filteredByMunicipality.filter(ad =>
             ad.type == btnTypes[0].id ||
             ad.type == btnTypes[1].id ||
             ad.type == btnTypes[2].id ||
@@ -106,7 +112,7 @@ function showAds(ads) {
           <div class="product-info">
             <p class="city">${typeText.toUpperCase()}</p>
             <a href="show-one.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}"><h3>${ads[Object.keys(ads)[i]].address}</h3></a>
-            <p class="city">${ads[Object.keys(ads)[i]].city}</p>
+            <p class="city">${ads[Object.keys(ads)[i]].city}, ${ads[Object.keys(ads)[i]].municipality} kommun</p>
             <p class="city">${ads[Object.keys(ads)[i]].tagline}</p>
             <br>
             <table>
