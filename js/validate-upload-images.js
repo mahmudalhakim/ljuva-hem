@@ -65,7 +65,7 @@ function numberOfImages(formName, inputName, feedbackId) {
 function checkLength(formName, inputName, feedbackId){
   // check if right input lenght
   let input = document.forms[formName][inputName].value;
-  if (input.length > 50) {
+  if (input.length >= 60) {
     document.getElementById(feedbackId).innerHTML = "Max 50 tecken";
     return false;
   }
