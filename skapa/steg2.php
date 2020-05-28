@@ -38,7 +38,7 @@
         <li class="create__nav--step"><h3>4 - Klart</h3></li>
       </ul>
     </nav>
-    <form action="steg2-logic.php" name="formInfo" class="form__sell" method="post" onsubmit="return validateForm()">
+    <form action="steg2-logic.php" name="formCreate" class="form__sell" method="post" onsubmit="return validateForm()">
       <h3>2 - Beskrivning</h3>
       <h4 class="create__nav--step">'.$address.', '.$city.'</h4>
       <label for="tagline">Kort beskrivning (max 300 tecken)</label><br>

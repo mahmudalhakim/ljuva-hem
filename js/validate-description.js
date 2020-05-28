@@ -3,30 +3,30 @@ function validateForm(){
 
   // check tagline
   document.getElementById('taglineFeedback').innerHTML = "";
-  taglineSpacesCheck = checkSpaces('formInfo','tagline','taglineFeedback')
+  taglineSpacesCheck = checkSpaces('formCreate','tagline','taglineFeedback')
   if(taglineSpacesCheck == false){
     allValidatedOK = false
   }
-  taglineLengthCheck = checkLengthTagline('formInfo','tagline','taglineFeedback')
+  taglineLengthCheck = checkLengthTagline('formCreate','tagline','taglineFeedback')
   if(taglineLengthCheck == false){
     allValidatedOK = false
   }
-  taglineNumbersCheck = checkLetters('formInfo','tagline','taglineFeedback')
+  taglineNumbersCheck = checkLetters('formCreate','tagline','taglineFeedback')
   if(taglineNumbersCheck == false){
     allValidatedOK = false
   }
 
   // check description
   document.getElementById('descriptionFeedback').innerHTML = "";
-  descriptionSpacesCheck = checkSpaces('formInfo','description','descriptionFeedback')
+  descriptionSpacesCheck = checkSpaces('formCreate','description','descriptionFeedback')
   if(descriptionSpacesCheck == false){
     allValidatedOK = false
   }
-  descriptionLengthCheck = checkLengthDescription('formInfo','description','descriptionFeedback')
+  descriptionLengthCheck = checkLengthDescription('formCreate','description','descriptionFeedback')
   if(descriptionLengthCheck == false){
     allValidatedOK = false
   }
-  descriptionNumbersCheck = checkLetters('formInfo','description','descriptionFeedback')
+  descriptionNumbersCheck = checkLetters('formCreate','description','descriptionFeedback')
   if(descriptionNumbersCheck == false){
     allValidatedOK = false
   }

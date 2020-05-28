@@ -37,11 +37,11 @@
         </select><br><br>
 
         <label for="rooms">Antal rum</label><br>
-        <input type="text" class="form__input--create" name="rooms" id="rooms" placeholder="Antal rum..." required>
+        <input type="number" class="form__input--create" name="rooms" id="rooms" placeholder="Antal rum..." required>
         <p id="roomsFeedback" class="form__feedback"></p>
 
         <label for="area">Boarea (m²)</label><br>
-        <input type="text" class="form__input--create" name="area" id="area" placeholder="Boarea..." required>
+        <input type="number" class="form__input--create" name="area" id="area" placeholder="Boarea..." required>
         <p id="areaFeedback" class="form__feedback"></p>
 
         <label for="price">Pris (kr)</label><br>

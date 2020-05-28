@@ -51,12 +51,13 @@
       $typeText = 'Övrigt';
       break;
   }
-  $tagline = htmlspecialchars($row['tagline']);
-  $description = htmlspecialchars($row['description']);
+  $tagline = htmlspecialchars_decode($row['tagline']);
+  $description = htmlspecialchars_decode($row['description']);
 
       echo '<div>
-      <form action="ad-edit-logic.php?ad_id='.$ad_id.'" class="form__sell" method="post">
+      <form action="ad-edit-logic.php?ad_id='.$ad_id.'" name="formCreate" class="form__sell" method="post" onsubmit="return validateForm()">
         <h3>Redigera beskrivning</h3>
+
         <label for="type">Bostadstyp</label><br>
         <select class="form__input--create" name="type" id="type">
           <option value="'.$type.'">'.$typeText.'</option>
@@ -65,39 +66,49 @@
           <option value="house">Villa</option>
           <option value="townhouse">Radhus</option>
           <option value="countryhouse">Fritidshus</option>
-        </select>
-        <br><br>
+        </select><br><br>
+
         <label for="rooms">Antal rum</label><br>
-        <input type="text" class="form__input--create" name="rooms" id="rooms" placeholder="Antal rum..." value="'.$rooms.'">
-        <br><br>
+        <input type="number" class="form__input--create" name="rooms" id="rooms" placeholder="Antal rum..." value="'.$rooms.'">
+        <p id="roomsFeedback" class="form__feedback"></p>
+
         <label for="area">Boarea (m²)</label><br>
-        <input type="text" class="form__input--create" name="area" id="area" placeholder="Boarea..." value="'.$area.'">
-        <br><br>
+        <input type="number" class="form__input--create" name="area" id="area" placeholder="Boarea..." value="'.$area.'">
+        <p id="areaFeedback" class="form__feedback"></p>
+
         <label for="price">Pris (kr)</label><br>
         <input type="number" class="form__input--create" name="price" id="price" placeholder="Pris..." value="'.$price.'">
-        <br><br>
+        <p id="priceFeedback" class="form__feedback"></p>
+
         <label for="rent">Avgift (kr/mån)</label><br>
         <input type="number" class="form__input--create" name="rent" id="rent" placeholder="Avgift..." value="'.$rent.'">
-        <br><br>
+        <p id="rentFeedback" class="form__feedback"></p>
+
         <label for="address">Gatuadress</label><br>
         <input type="text" class="form__input--create" name="address" placeholder="Gatuadress..." value="'.$address.'" required>
-        <br><br>
+        <p id="addressFeedback" class="form__feedback"></p>
+
         <label for="city">Stad</label><br>
         <input type="text" class="form__input--create" name="city" placeholder="Stad..." value="'.$city.'" required>
-        <br><br>
+        <p id="cityFeedback" class="form__feedback"></p>
+
         <label for="municipality">Kommun</label><br>
         <select class="form__input--create" name="municipality" id="municipality" required>
           <option value="'.$municipality.'">'.$municipality.'</option>
           <option value="unknown">-- Okänd kommun --</option>
         </select>
-        <br><br>
-      <label for="tagline">Kort beskrivning (max 300 tecken)</label><br>
-      <textarea rows="4" class="form__input--create" name="tagline" id="tagline" placeholder="Kort beskrivning...">'.$tagline.'</textarea>
-      <br><br>
-      <label for="description">Beskrivning (upp till 1200 tecken)</label><br>
-      <textarea rows="12" class="form__input--create" name="description" id="description" placeholder="Beskrivning...">'.$description.'</textarea>
-      <br><br><br>
-      <button type="submit" class="form__submit_btn--create">Uppdatera</button>
+        <p id="municipalityFeedback" class="form__feedback"></p>
+
+        <label for="tagline">Kort beskrivning (max 300 tecken)</label><br>
+        <textarea rows="4" class="form__input--create" name="tagline" id="tagline" placeholder="Kort beskrivning...">'.$tagline.'</textarea>
+        <p id="taglineFeedback" class="form__feedback"></p>
+
+        <label for="description">Beskrivning (upp till 1200 tecken)</label><br>
+        <textarea rows="12" class="form__input--create" name="description" id="description" placeholder="Beskrivning...">'.$description.'</textarea>
+        <p id="descriptionFeedback" class="form__feedback"></p>
+
+        <br>
+        <button type="submit" class="form__submit_btn--create">Uppdatera</button>
       </form>
     </section>';
   } else {
@@ -117,6 +128,7 @@
 ?>
 
 <script src="../js/select-municipalities.js"></script>
+<script src="../js/validate-edit.js"></script>
 
 <?php
   require_once 'footer.php';

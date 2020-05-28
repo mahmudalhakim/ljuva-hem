@@ -41,7 +41,7 @@
         $area = htmlspecialchars($row['area']);
         $price = htmlspecialchars($row['price']);
         $rent = htmlspecialchars($row['rent']);
-        $tagline = htmlspecialchars($row['tagline']);
+        $tagline = htmlspecialchars_decode($row['tagline']);
         $address = htmlspecialchars($row['address']);
         $city = htmlspecialchars($row['city']);
         $municipality = htmlspecialchars($row['municipality']);
