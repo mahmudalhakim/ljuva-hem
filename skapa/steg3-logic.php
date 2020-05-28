@@ -5,13 +5,8 @@
 
 require_once '../db.php';
 
-if (isset($_GET['id'])):
-  $ad_id = htmlspecialchars($_GET['id']);
-  // create a row in images table
-  $sqlCreate = "INSERT INTO `ljuvahem-images` (`ad_id`, `image_hero`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`, `image_6`, `image_7`, `image_8`, `image_9`, `image_10`) 
-  VALUES ('$ad_id', '', '', '', '', '', '', '', '', '', '', '')";
-  $stmtCreate = $db->prepare($sqlCreate);
-  $stmtCreate->execute();
+if (isset($_GET['ad_id'])):
+  $ad_id = htmlspecialchars($_GET['ad_id']);
 
   // applicerat från https://www.studentstutorial.com/php/php-multiple-file-upload
   $directory = "../images";/* Path for file upload */
@@ -53,7 +48,7 @@ if (isset($_GET['id'])):
       }
     }
   }
-  header("Location:steg4.php?id=$ad_id");
+  header("Location:steg4.php?ad_id=$ad_id");
 endif;
 
 ?>

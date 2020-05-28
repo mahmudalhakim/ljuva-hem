@@ -92,7 +92,7 @@ function validateForm(){
 function checkLetters(formName, inputName, feedbackId){
   // check for latin letters
   let input = document.forms[formName][inputName].value;
-  let onlyLetters = /^[a-zA-Z\- ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789]*$/.test(input);
+  let onlyLetters = /^[a-zA-Z\- .\.ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789]*$/.test(input);
   if (onlyLetters == false) {
     document.getElementById(feedbackId).innerHTML = "Bara de vanligaste tecknen tillåtna";
     return false;
@@ -102,10 +102,10 @@ function checkLetters(formName, inputName, feedbackId){
 }
 
 function checkNumbers(formName, inputName, feedbackId){
-  // check for latin letters
+  // check for latin numbers
   let input = document.forms[formName][inputName].value;
-  let onlyLetters = /^[0-9.,]*$/.test(input);
-  if (onlyLetters == false) {
+  let onlyNumbers = /^[0-9.,]*$/.test(input);
+  if (onlyNumbers == false) {
     document.getElementById(feedbackId).innerHTML = "Bara nummer tillåtna";
     return false;
   } else {
