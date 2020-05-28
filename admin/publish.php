@@ -6,7 +6,6 @@ include_once '../db.php';
 
 $ad_id = htmlentities($_GET['ad_id']);
 $publish = htmlentities($_GET['publish']);
-print_r($_GET);
 if($publish == "yes"){
   $sql = "UPDATE `ljuvahem-ad` SET 
   published = '$publish', 
@@ -17,7 +16,6 @@ if($publish == "yes"){
   published = '$publish'
   WHERE ad_id = $ad_id";
 }
-echo "<br>".$sql;
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
