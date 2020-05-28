@@ -31,6 +31,7 @@ require_once 'db.php';
     $stmtImg = $db->prepare($sqlImg);
     $stmtImg->execute();
     
+    $rowImg = $stmtImg->fetch(PDO::FETCH_ASSOC);
     $image_hero = htmlspecialchars($rowImg['image_hero']);
     $image_1 = htmlspecialchars($rowImg['image_1']);
     $image_2 = htmlspecialchars($rowImg['image_2']);

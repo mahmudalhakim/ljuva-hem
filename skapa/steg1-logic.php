@@ -21,7 +21,7 @@ require_once '../db.php';
     $sqlId ="SELECT `ad_id` FROM `ljuvahem-ad` ORDER BY ad_id DESC LIMIT 1";
     $stmtId = $db->prepare($sqlId);
     $stmtId->execute();
-    $rowId = $stmt->fetch(PDO::FETCH_ASSOC);
+    $rowId = $stmtId->fetch(PDO::FETCH_ASSOC);
     $ad_id = htmlspecialchars($rowId['ad_id']);
 
     $sqlCreate = "INSERT INTO `ljuvahem-images` (`ad_id`, `image_hero`, `image_1`, `image_2`, `image_3`, `image_4`, `image_5`, `image_6`, `image_7`, `image_8`, `image_9`, `image_10`) 
