@@ -30,7 +30,6 @@
       <p>Annonsen sparades!</p><br>';
 
       $sql  = "SELECT * FROM `ljuvahem-ad` WHERE `ad_id` = $ad_id";
-      echo $sql;
       $stmt = $db->prepare($sql);
       $stmt->execute();
   

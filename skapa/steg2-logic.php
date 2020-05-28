@@ -11,6 +11,6 @@
 
     header("Location:steg3.php?ad_id=$ad_id");
   } else {
-    echo "Hoppsan, nu blev det nått fel!<br><a href='index.php'>Tillbaka hem</a>";
+    header("Location:index.php");
   } 
 ?>

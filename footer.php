@@ -3,7 +3,7 @@
 
 <nav>
   <ul>
-    <li><a href="information.php">json</a></li>
+    <li><a href="#">Till toppen</a></li>
   </ul>
 </nav>
 </footer>
