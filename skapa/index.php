@@ -91,7 +91,7 @@
             <td><p>$area m²</p></td>
             <td><p>$rooms rum</p></td>
           </table><br>
-          <a href='ad-edit.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera text</button></a>
+          <a href='ad-edit.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera info</button></a>
           <a href='ad-edit-images.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera bilder</button></a>
           <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Ta bort</button></a>
         </div>

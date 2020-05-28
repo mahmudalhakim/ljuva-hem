@@ -5,7 +5,7 @@
 
 require_once '../db.php';
 
-if (isset($_GET['ad_id'])):
+if (isset($_GET['ad_id'])){
   $ad_id = htmlspecialchars($_GET['ad_id']);
 
   // applicerat från https://www.studentstutorial.com/php/php-multiple-file-upload
@@ -24,7 +24,7 @@ if (isset($_GET['ad_id'])):
     // upload images to images folder and save in db table "images"
     for($i=0; $i < $fileCount; $i++) {    
       $ImageName      = str_replace(' ','-',strtolower($_FILES['image']['name'][$i]));
-      $ImageType      = $_FILES['image']['type'][$i]; /*"image/png", image/jpeg etc.*/
+      $ImageType      = $_FILES['image']['type'][$i];
             
       $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
       $ImageExt       = str_replace('.','',$ImageExt);
@@ -49,6 +49,8 @@ if (isset($_GET['ad_id'])):
     }
   }
   header("Location:steg4.php?ad_id=$ad_id");
-endif;
+} else {
+  header("Location:ad-edit-images-fail.php");
+}
 
 ?>

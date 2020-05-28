@@ -10,6 +10,12 @@ function validateForm(){
     allValidatedOK = false
   }
 
+  // check images address length
+  imagesLengthCheck = checkLength('formImages','image[]','imagesFeedback')
+  if(imagesLengthCheck == false){
+    allValidatedOK = false
+  }
+
   // check number of images
   imagesNumbersCheck = numberOfImages('formImages','image[]','imagesFeedback')
   if(imagesNumbersCheck == false){
@@ -53,6 +59,15 @@ function numberOfImages(formName, inputName, feedbackId) {
     return false;
   } else {
     return true;
+  }
+}
+
+function checkLength(formName, inputName, feedbackId){
+  // check if right input lenght
+  let input = document.forms[formName][inputName].value;
+  if (input.length > 50) {
+    document.getElementById(feedbackId).innerHTML = "Max 50 tecken";
+    return false;
   }
 }
 
