@@ -53,13 +53,15 @@
     }
     if($numberOfImages < 10){
       $left = 10 - $numberOfImages;
-      echo '<form action="ad-edit-images-logic.php" enctype="multipart/form-data" method="post" class="form__sell">
+      echo '<form action="ad-edit-images-logic.php" enctype="multipart/form-data" method="post" class="form__sell" name="formImages" onsubmit="return validateForm()">
         <h3>Lägg till bilder</h3>
-        <p>Antal bilder: '.$numberOfImages.'/10</p>
+        <p>Antal bilder du kan lägga till: '.$left.'</p>
+        <input type="file" id="image" name="image[]" id="fileToUpload" multiple>
+        <p id="imagesFeedback" class="form__feedback"></p>
+
         <input type="hidden" id="ad_id" name="ad_id" value="'.$ad_id.'"> 
         <input type="hidden" id="left" name="left" value="'.$left.'"> 
-        <input type="file" id="image" name="image[]" id="fileToUpload" multiple>
-        <br><br>
+
         <button type="submit" class="form__submit_btn--create">Lägg till</button>
       </form>';
     } else {
@@ -82,6 +84,8 @@
       </section>';
   }
 ?>
+
+<script src="../js/validate-images.js"></script>
 
 <?php
   require_once 'footer.php';

@@ -4,14 +4,10 @@
 **************************************** */
 
 require_once '../db.php';
-// echo "<pre>";
-// print_r($_FILES);
-// print_r($_POST);
-// echo "</pre>";
 if ( isset($_FILES['image']) && isset($_POST['left']) && isset($_POST['ad_id']) ){
   $ad_id = htmlspecialchars($_POST['ad_id']);
   $left = htmlspecialchars($_POST['left']);
-  // applicerat från https://www.studentstutorial.com/php/php-multiple-file-upload
+  // bild uppladdning applicerat från https://www.studentstutorial.com/php/php-multiple-file-upload
   $directory = "../images";/* Path for file upload */
 
   // making sure theres 10 or less images

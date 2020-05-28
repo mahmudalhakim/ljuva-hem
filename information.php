@@ -1,9 +1,8 @@
 <?php
 require_once 'db.php';
-  header("Content-Type: application/json; charset=UTF-8");  // ange att innehållet är json
+  header("Content-Type: application/json; charset=UTF-8"); 
 /**************************************** *
  * read info from db & display ads
- * different sql-ads depending on which link pushed
 **************************************** */
 
   $sql = "SELECT * FROM `ljuvahem-ad`";
