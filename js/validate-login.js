@@ -52,7 +52,7 @@ function checkEmail(formName, inputName, feedbackId){
 function checkPassword(formName, inputName, feedbackId){
   // check for allowed characters & length
   let input = document.forms[formName][inputName].value;
-  let allowedCharacters = /^[a-zA-Z-_ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789!?@#$%^&*]*$/.test(input);
+  let allowedCharacters = /^[a-zA-Z-_ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî0123456789!?@#$%^&*.]*$/.test(input);
   if (allowedCharacters == false) {
     document.getElementById(feedbackId).innerHTML = "Kan endast bestå av bokstäver, siffror eller !@#$%^&*-_";
     return false;
