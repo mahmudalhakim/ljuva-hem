@@ -82,16 +82,16 @@
                 </div>";
         echo "<div class='product-info'>
             <p>$publishedText</p>
-            <p>Typ: $typeText</p>
+            <p>$tagline</p>
             <h3>$address, $city</h3>
             <p class=''>$municipality kommun</p>
+            <p>Typ: $typeText</p>
             <table>
               <td><p>$price kr</p></td>
               <td><p>$rent kr/mån</p></td>
               <td><p>$area m²</p></td>
               <td><p>$rooms rum</p></td>
             </table>
-            <p>$tagline</p>
           </div>
         </div>";
       }
