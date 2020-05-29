@@ -315,6 +315,7 @@ button:hover {
 }
 
 .product-info--single {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -324,15 +325,8 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-@media screen and (min-width: 600px) {
-  .product-info--single {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
+  padding-top: 1rem;
+  line-height: 1.45;
 }
 
 .product-info--single h3,
@@ -340,20 +334,18 @@ button:hover {
   margin-bottom: 0;
 }
 
-.product-info--single {
-  width: 100%;
-}
-
-@media screen and (min-width: 600px) {
-  .product-info--single {
-    padding-top: 2vw;
-  }
-}
-
 .adImg--single {
   width: 100%;
   height: auto;
   margin-top: 1rem;
+}
+
+.ad-single--info {
+  width: 100%;
+}
+
+.table__ad-single {
+  width: 100%;
 }
 
 .create__nav ul {

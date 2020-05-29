@@ -34,7 +34,7 @@ function showAds(ads) {
         }
         let muniText = ads[Object.keys(ads)[i]].municipality.toUpperCase()+" kommun".toUpperCase()
         adSection.innerHTML += `
-        <img src="images/${ads[Object.keys(ads)[i]].image_hero}" class="adImg--single adImg--main">`
+        <div><img src="images/${ads[Object.keys(ads)[i]].image_hero}" class="adImg--single adImg--main"></div>`
         adSection.innerHTML += `
           <div class="product-info--single">
             <div class="ad-single--desc">     
@@ -47,26 +47,33 @@ function showAds(ads) {
             </div>
 
             <div class="ad-single--info">
-              <table>
+              <table class="table__ad-single">
               <tr>
                 <th>Typ</th>
-                <th>Boarea</th>
-                <th>Rum</th>
-                <th>Pris</th>
-                <th>Avgift</th>
+                <td>${typeText}</td>
               </tr>
               <tr>
-                <td><p>${typeText}</p></td>
-                <td><p>${ads[Object.keys(ads)[i]].area} m²</p></td>
-                <td><p>${ads[Object.keys(ads)[i]].rooms} rum</p></td>
-                <td><p>${parseInt(ads[Object.keys(ads)[i]].price).toLocaleString().replace(',', ' ').replace(',', ' ')} kr</p></td>
-                <td><p>${parseInt(ads[Object.keys(ads)[i]].rent).toLocaleString().replace(',', ' ').replace(',', ' ')} kr</p></td>
-              </tr>
+                <th>Boarea</th>
+                <td>${ads[Object.keys(ads)[i]].area} m²</td>
+                </tr>
+                <tr>
+                <th>Rum</th>
+                <td>${ads[Object.keys(ads)[i]].rooms} rum</td>
+                </tr>
+                <tr>
+                <th>Pris</th>
+                <td>${parseInt(ads[Object.keys(ads)[i]].price).toLocaleString().replace(',', ' ').replace(',', ' ')} kr</td>
+                </tr>
+                <tr>
+                <th>Avgift</th>             
+                <td>${parseInt(ads[Object.keys(ads)[i]].rent).toLocaleString().replace(',', ' ').replace(',', ' ')} kr</td>
+                </tr>
               </table>
             </div>
 
           </div>
         </div>`
+
 
         adSection.innerHTML += `
         <div class="product-info--single">
@@ -75,7 +82,7 @@ function showAds(ads) {
         for (let j = 0; j < images.length; j++) {
           const image = images[j];
           if( image !== ''){
-            adSection.innerHTML += `<img src="images/${ads[Object.keys(ads)[i]].images[j]}" class="adImg--single">`
+            adSection.innerHTML += `<div><img src="images/${ads[Object.keys(ads)[i]].images[j]}" class="adImg--single"></div>`
           }
         }        
         // break loop when correct ad is found

@@ -8,22 +8,18 @@
 }
 
 .product-info--single {
+  width: 100%;
   display: flex;
   flex-flow: wrap;
   flex-direction: column;
-  @media screen and (min-width: 600px) {
-    flex-direction: row;
-  }
+  padding-top: 1rem;
+  line-height: 1.45;
+  // @media screen and (min-width: 600px) {
+  //   flex-direction: row;
+  // }
   h3,
   p {
     margin-bottom: 0;
-  }
-}
-
-.product-info--single {
-  width: 100%;
-  @media screen and (min-width: 600px) {
-    padding-top: 2vw;
   }
 }
 
@@ -34,9 +30,12 @@
 }
 
 .ad-single--desc {
-
 }
 
 .ad-single--info {
+  width: 100%;
+}
 
+.table__ad-single {
+  width: 100%;
 }
