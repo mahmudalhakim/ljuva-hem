@@ -3,7 +3,7 @@
   require_once 'header.php';
 ?>
 <br>
-<section id="adSection"></section> 
+<section id="adSectionSingle"></section> 
 <script src="js/display-ad.js"></script>
 
 <?php
