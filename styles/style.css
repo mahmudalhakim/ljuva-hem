@@ -352,6 +352,7 @@ button:hover {
 
 .adImg--single {
   width: 100%;
+  height: auto;
   margin-top: 1rem;
 }
 
@@ -424,11 +425,11 @@ h1, h2, h3, h4, label {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-p, a, thead {
+p, a, thead, tr {
   font-family: 'Lato', sans-serif;
 }
 
-thead {
+thead, tr {
   text-align: left;
 }
 

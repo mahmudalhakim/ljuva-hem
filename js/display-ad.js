@@ -32,29 +32,31 @@ function showAds(ads) {
             typeText = 'Övrigt';
             break;
         }
+        let muniText = ads[Object.keys(ads)[i]].municipality.toUpperCase()+" kommun".toUpperCase()
         adSection.innerHTML += `
-        <h2>${ads[Object.keys(ads)[i]].address}</h2>
         <img src="images/${ads[Object.keys(ads)[i]].image_hero}" class="adImg--single adImg--main">`
         adSection.innerHTML += `
           <div class="product-info--single">
-
-            <div class="ad-single--desc">
-              <p class="city">${typeText.toUpperCase()}</p>
+            <div class="ad-single--desc">     
+              <h1>${ads[Object.keys(ads)[i]].address}, ${ads[Object.keys(ads)[i]].city}</h1>  
+              <p class="city">${muniText}</p>
               <p class="city">${ads[Object.keys(ads)[i]].tagline}</p>
-              <h3>${ads[Object.keys(ads)[i]].address}</h3>
-              <p class="city">${ads[Object.keys(ads)[i]].city}, ${ads[Object.keys(ads)[i]].municipality} kommun</p>
+              <h2>Beskrivning</h2>         
+              <p class="city">${ads[Object.keys(ads)[i]].description}</p>      
               <br>
             </div>
 
             <div class="ad-single--info">
               <table>
-              <thead>
+              <tr>
+                <th>Typ</th>
                 <th>Boarea</th>
                 <th>Rum</th>
                 <th>Pris</th>
                 <th>Avgift</th>
-              </thead>
+              </tr>
               <tr>
+                <td><p>${typeText}</p></td>
                 <td><p>${ads[Object.keys(ads)[i]].area} m²</p></td>
                 <td><p>${ads[Object.keys(ads)[i]].rooms} rum</p></td>
                 <td><p>${parseInt(ads[Object.keys(ads)[i]].price).toLocaleString().replace(',', ' ').replace(',', ' ')} kr</p></td>
@@ -79,7 +81,7 @@ function showAds(ads) {
         // break loop when correct ad is found
         break
       } else {
-        adSection.innerHTML = "<h3>&#128577; Tyvärr, annonsen finns inte!</h3>"
+        adSection.innerHTML = "<h3>&#128577; Tyvärr, annonsen hittas inte!</h3>"
       }
     }
   } else {
