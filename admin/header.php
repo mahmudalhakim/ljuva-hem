@@ -20,6 +20,7 @@
   <nav>
     <ul>
       <li><a href="../index.php" class="nav__link nav__link--admin">Ljuva hem</a></li>
+      <li><a href="index.php" class="nav__link nav__link--admin">Hem</a></li>
       <li><a href="index.php" class="nav__link nav__link--admin">Annonser</a></li>
       <li><a href="members.php" class="nav__link nav__link--admin">Medlemmar</a></li>
     </ul>
@@ -30,7 +31,7 @@
     echo '
     <nav class="nav__login">
       <ul>
-        <li><a href="logout-logic.php" id="login" class="login--admin">Logga ut</a></li>
+        <li><a href="logout-logic.php" id="login" class="login--admin nav__link--admin">Logga ut</a></li>
       </ul>
     </nav>
     </header>
@@ -39,7 +40,7 @@
       echo '
       <nav class="nav__login">
         <ul>
-        <li><a href="login.php" id="login" class="login--admin">Logga in</a></li>
+          <li><a href="login.php" id="login" class="login--admin nav__link--admin">Logga in</a></li>
         </ul>
       </nav>
       </header>

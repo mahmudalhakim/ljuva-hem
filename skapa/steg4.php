@@ -65,7 +65,7 @@
         }
         $published = htmlspecialchars($row['published']);
         if($published ==  'no'){
-          $publishedText = 'Väntar på godkännande';
+          $publishedText = 'Ej publicerad';
         } else {
           $publishedText = 'Publicerad';
         }
@@ -82,9 +82,9 @@
                 </div>";
         echo "<div class='product-info'>
             <p>$publishedText</p>
+            <p>Typ: $typeText</p>
             <h3>$address, $city</h3>
             <p class=''>$municipality kommun</p>
-            <p>$typeText</p>
             <table>
               <td><p>$price kr</p></td>
               <td><p>$rent kr/mån</p></td>

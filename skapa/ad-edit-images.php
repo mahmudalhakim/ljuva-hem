@@ -29,17 +29,17 @@
       if($i == 0){
         $image = "image_hero";
         $numberOfImages++;
-        echo '<img src="../images/'.htmlspecialchars($row[$image]).'" 
+        echo '<div><img src="../images/'.htmlspecialchars($row[$image]).'" 
         alt="'.$ad_id.'-'.$i.'" 
-        class="adImg adImg--hero">';
+        class="adImg adImg--hero"></div>';
         echo "<p>Byt till annan primärbild för att ta bort</p><br><br>";
       } else {
         $image = 'image_'.$i;
          if( strlen($row[$image]) > 0 && htmlspecialchars($row[$image]) != $heroAddress ){
           $numberOfImages++;
-          echo '<img src="../images/'.htmlspecialchars($row[$image]).'" 
+          echo '<div><img src="../images/'.htmlspecialchars($row[$image]).'" 
           alt="'.$ad_id.'-'.$i.'" 
-          class="adImg"><br>';
+          class="adImg"></div><br>';
           echo "
           <a href='ad-image-delete.php?ad_id=$ad_id&image=$image'>
             <button class='ad__button ad__button--active'>Ta bort</button>
@@ -73,7 +73,7 @@
     echo '
       <nav class="nav__login">
         <ul>
-          <li><a href="../login.php" id="login">Logga in</a></li>
+          <li><a href="../login.php" id="login" class="nav__link--sell">Logga in</a></li>
         </ul>
       </nav>
     </header>

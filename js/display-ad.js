@@ -9,8 +9,10 @@ function showAds(ads) {
   let ad_id = window.location.search.replace("?ad_id=", "")
   let adSection = document.getElementById("adSectionSingle")
   adSection.innerHTML = ""
+  console.log(ads.length)
   if (ads.length > 0) {
-    for (let i = 0; i < ads.length; i++) {
+    for (let i = 0; i <= ads.length; i++) {
+      console.log(i)
       if (ads[Object.keys(ads)[i]].ad_id == ad_id) {
         let type = ads[Object.keys(ads)[i]].type
         let images = ads[Object.keys(ads)[i]].images
@@ -87,8 +89,6 @@ function showAds(ads) {
         }        
         // break loop when correct ad is found
         break
-      } else {
-        adSection.innerHTML = "<h3>&#128577; Tyvärr, annonsen hittas inte!</h3>"
       }
     }
   } else {

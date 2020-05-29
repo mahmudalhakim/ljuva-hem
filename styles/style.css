@@ -126,7 +126,7 @@ a.login--admin {
   margin-top: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1000px) {
   .product, .ad {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -152,11 +152,12 @@ a.login--admin {
 }
 
 .product-info {
-  padding-left: 2rem;
+  padding: 0.5rem;
 }
 
 @media screen and (min-width: 600px) {
   .product-info {
+    padding-left: 2rem;
     padding-top: 2vw;
     width: 50%;
   }
@@ -290,8 +291,8 @@ button:hover {
 }
 
 .adImg {
-  height: 300px;
-  width: auto;
+  width: 100%;
+  height: auto;
 }
 
 .adImg--hero {
@@ -348,6 +349,18 @@ button:hover {
   width: 100%;
 }
 
+.table__ad-admin {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+}
+
+.table__ad-admin td, .table__ad-admin th {
+  line-height: 1.7;
+  background: #ff3;
+}
+
 .create__nav ul {
   display: -ms-grid;
   display: grid;
@@ -388,6 +401,16 @@ button:hover {
   width: 100%;
   min-height: 20vh;
   background: #f0f4f5;
+  padding: 2rem;
+}
+
+.footer ul li a, .ad--link {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer ul li a:hover, .ad--link:hover {
+  text-decoration: underline;
 }
 
 .footer__buy {

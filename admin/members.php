@@ -6,15 +6,7 @@
 
     echo "
     <section class='section__create'>
-      <h1>Medlemmar</h1>
-      <div class='ad ad--admin'>
-      <table>
-        <thead>
-          <th>Medlemsnummer</th>
-          <th>Namn</th>
-          <th>E-mail</th>
-          <th></th>
-        </thead>";
+      <h1>Medlemmar</h1>";
     
     $sql  = "SELECT * FROM `ljuvahem-member` ORDER BY `ljuvahem-member`.`member_id`";
     $stmt = $db->prepare($sql);
@@ -27,20 +19,32 @@
       if( $member_id != 1 ){
         $name = htmlspecialchars($row['firstname'])." ".htmlspecialchars($row['surname']);
         $email = htmlspecialchars($row['email']);
-        echo "<tr>
-                <td><p>$member_id</p></td>
-                <td><p>$email</p></td>
-                <td><p>$name</p></td>
-                <td><a href='show-all.php?member_id=$member_id'>Se annonser</a></td>
-              </tr>";
+        echo "
+        <div class='ad ad--admin'>
+          <table class='table__ad-admin'>
+            <tr>
+              <th>Medlemsnummer</th>
+              <td>$member_id</td>
+            </tr>
+            <tr>
+              <th>Namn</th>
+              <td>$email</td>
+            </tr>
+            <tr>
+              <th>E-mail</th>
+              <td>$name</td>
+            </tr>
+            <tr>
+              <th><a href='show-all.php?member_id=$member_id'>Se annonser</a></th>
+              <td></td>
+            </tr>
+          </table>
+        </div>";
       }
     }
       if(!$result){
         echo "<p>Det finns inga medlemmar att visa</p>";
       }
-      echo "
-          </table>
-      </div>";
   } else {
     echo '
     <section class="section__create">

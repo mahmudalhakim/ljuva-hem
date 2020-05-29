@@ -111,7 +111,7 @@ function showAds(ads) {
           </div>
           <div class="product-info">
             <p class="city">${typeText.toUpperCase()}</p>
-            <a href="show-one.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}"><h3>${ads[Object.keys(ads)[i]].address}</h3></a>
+            <a href="show-one.php?ad_id=${ads[Object.keys(ads)[i]].ad_id}" class="ad--link"><h3>${ads[Object.keys(ads)[i]].address}</h3></a>
             <p class="city">${ads[Object.keys(ads)[i]].city}, ${ads[Object.keys(ads)[i]].municipality} kommun</p>
             <p class="city">${ads[Object.keys(ads)[i]].tagline}</p>
             <br>

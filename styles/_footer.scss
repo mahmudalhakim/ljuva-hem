@@ -2,6 +2,15 @@
   width: 100%;
   min-height: 20vh;
   background: $lightShade;
+  padding: 2rem;
+}
+
+.footer ul li a, .ad--link {
+  color: $darkGrey;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .footer__buy {

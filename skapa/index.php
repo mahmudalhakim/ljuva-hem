@@ -65,9 +65,9 @@
       }
       $published = htmlspecialchars($row['published']);
       if($published ==  'no'){
-        $publishedText = 'Väntar på godkännande';
+        $publishedText = strtoupper('Ej publicerad');
       } else {
-        $publishedText = 'Publicerad';
+        $publishedText = strtoupper('Publicerad');
       }
 
       $sqlImg  = "SELECT `image_hero` FROM `ljuvahem-images` WHERE `ad_id` = $ad_id";
@@ -81,19 +81,20 @@
                 <img src='../images/$image' alt='image'>
               </div>";
       echo "<div class='product-info'>
+          <br>
+          <a href='ad-edit.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera info</button></a>
+          <a href='ad-edit-images.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera bilder</button></a>
+          <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Ta bort</button></a>
           <p>$publishedText</p>
-          <h3>$address, $city</h3>
-          <p class=''>$municipality kommun</p>
-          <p>$typeText</p>
+          <p>Typ: $typeText</p>
+          <h3>$address</h3>
+          <p class=''>$city, $municipality kommun</p>
           <table>
             <td><p>$price kr</p></td>
             <td><p>$rent kr/mån</p></td>
             <td><p>$area m²</p></td>
             <td><p>$rooms rum</p></td>
           </table><br>
-          <a href='ad-edit.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera info</button></a>
-          <a href='ad-edit-images.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Redigera bilder</button></a>
-          <a href='ad-delete.php?ad_id=$ad_id'><button class='ad__button ad__button--active'>Ta bort</button></a>
         </div>
       </div>";
       }
@@ -106,7 +107,7 @@
     echo '
     <nav class="nav__login">
       <ul>
-        <li><a href="../login.php" id="login">Logga in</a></li>
+        <li><a href="../login.php" id="login" class="nav__link--sell">Logga in</a></li>
       </ul>
     </nav>
   </header>
